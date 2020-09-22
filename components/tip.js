@@ -9,7 +9,7 @@ export default function Tip({navigation}){
         <Text style={styles.blacktext}>La Técnica Pomodoro es un método para mejorar la administración del tiempo dedicado a una actividad. Fue desarrollado por Francesco Cirillo a fines de la década de 1980. Se usa un temporizador para dividir el tiempo en intervalos indivisibles, llamados pomodoros, de 25 minutos de actividad, seguidos de 5 minutos de descanso, con pausas más largas cada cuatro pomodoros. 
         </Text>
         <View style={styles.btn}>
-        <Button title="Siguiente" color='#3491cd' onPress={() => navigation.navigate('Inicio de Sesion')}>Siguiente</Button>
+        <Button title="Siguiente" color='#3491cd' onPress={() => navigation.navigate('Temporizador Pomodoro')}>Siguiente</Button>
         </View>
         <View style={styles.btn}>
         <Button title="Volver" color='#8ec1e3' onPress={() => navigation.navigate('Inicio de Sesion')}>Volver</Button>

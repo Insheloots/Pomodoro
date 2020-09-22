@@ -20,19 +20,21 @@ export default TimerDisplay;
 const styles = StyleSheet.create({
 	container: {
 		marginTop: "7%",
-	    marginBottom: "10%",
-	    marginLeft: "7%",
-	    marginRight: "7%",
-	    padding: "20%",
+		marginBottom: "10%",
+		marginHorizontal: '18%',
+	    padding: "10%",
 	    borderColor: "white",
 	    borderRadius: 80,
-	    borderWidth: 5,
+	    borderWidth: 4,
 		alignItems: 'center',
 		backgroundColor: "#3491cd",
+		width: "66%",
+		height: "10%",
 	},
 	textStyle: {
+		marginTop: '-14%',
 		color: "white",
-	    fontSize: 50,
+	    fontSize: 30,
 	    fontWeight: "400",
 	}
 })
