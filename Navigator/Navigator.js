@@ -4,6 +4,7 @@ import { StackActions } from '@react-navigation/native'
 import Login from '../components/login'
 import Register from '../components/register'
 import Tip from '../components/tip'
+import Timer from '../components/Timer/PomodoroTimer'
 
 const Stack = createStackNavigator()
 
@@ -21,6 +22,10 @@ export default function Navigator(){
             <Stack.Screen
                 name= 'Consejo'
                 component={Tip}
+            />
+            <Stack.Screen
+                name= 'Temporizador Pomodoro'
+                component={Timer}
             />
 
         </Stack.Navigator>

@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
   },
   btn:{
     flex: 1,
+    margin: 'auto',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     width: '80%',

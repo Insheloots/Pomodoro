@@ -8,18 +8,26 @@ class TimerHeader extends React.Component {
 		if(this.props.intervalType === "Trabajando")
 		{
 			if(this.props.running === true) {
-				return "El tiempo ha iniciado, mantente concentrado durante los 5 minutos, te notificaremos cuando ya hayas terminado."
+				return(
+					<Text style={{fontSize: 15}}>El tiempo ha iniciado, mantente concentrado durante los 5 minutos, te notificaremos cuando ya hayas terminado.</Text>
+				)
 			}
 			else {
-				return "¿Quieres empezar? Dale en el botón de iniciar."
+				return (
+					<Text>¿Quieres empezar? Dale en el botón de iniciar</Text>
+				)
 			}	
 		}
 		else {
 			if(this.props.running === true) {
-				return "Es tiempo de descansar, disfruta de tus 5 minutos de relajación."
+				return(
+					<Text>Es tiempo de descansar, disfruta de tus 5 minutos de relajación.</Text>
+				)
 			}
 			else {
-				return "Relajate."
+				return(
+					<Text>Relajate.</Text>
+				)
 			}	
 		}
 
@@ -28,18 +36,20 @@ class TimerHeader extends React.Component {
 	
 		let texttoshow = this.handleDisplay()
 		return(
-			<Text style={styles.textStyle}>{texttoshow}</Text>
+			<Text style={styles.blacktext}>{texttoshow}</Text>
 		)				
 	}
 }
 
 const styles = StyleSheet.create({
-  textStyle: {
-    fontSize: 15,
-    fontWeight: "500",
-    letterSpacing: 1.5,
-    marginTop: 40,
-    padding: 20
+  blacktext:{
+	fontSize: 19,
+	marginHorizontal:'9%',
+	textAlign: 'center',
+	fontWeight: 'bold',
+	fontStyle: 'normal',
+	marginTop: '12%',
+	color: 'black',
   }
 });
 
