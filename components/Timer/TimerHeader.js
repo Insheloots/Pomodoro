@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, Alert} from 'react-native';
 
 class TimerHeader extends React.Component {
 
@@ -22,6 +22,7 @@ class TimerHeader extends React.Component {
 			if(this.props.running === true) {
 				return(
 					<Text>Es tiempo de descansar, disfruta de tus 5 minutos de relajación.</Text>
+					
 				)
 			}
 			else {

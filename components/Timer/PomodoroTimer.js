@@ -7,8 +7,8 @@ class PomodoroTimer extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			workTime: 0.1,
-			breakTime: 0.1,
+			workTime: 25,
+			breakTime: 5,
 			intervalType : "Trabajando",
 		}
 	}
