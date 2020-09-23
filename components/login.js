@@ -1,18 +1,40 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, TextInput, Button} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import { Text, View, StyleSheet, Image, TextInput, Button,TouchableOpacity} from 'react-native';
+
+import * as Font from 'expo-font';
 
 export default function login({navigation}){
+    const [fontsLoaded, setFontsLoaded] = useState(false);
+    useEffect(() => {
+      if(!fontsLoaded) {
+        loadFonts();
+      }
+    });
+
+    const loadFonts = async () => {
+      await Font.loadAsync({
+        'montserrat-light': require('../assets/fonts/Montserrat-Light.ttf'),
+      });
+      setFontsLoaded(true);
+    }
+
+    if(!fontsLoaded) {
+      return(<View/>);
+    }
+    
     return(
         <View style={styles.container}>
           <View style={styles.profileimage}>
             <Image style={styles.img} source = {require('../src/imgs/logo.png')}/>
           </View>
         <View style={styles.center}>
-          <TextInput placeholder=" Ingresa tu correo electrónico" style={styles.textbox}/>
-          <TextInput placeholder=" Contraseña" secureTextEntry={true} style={styles.textbox}/>
+          <Text>  Correo Electronico</Text>
+          <TextInput placeholder="  Ingresa tu correo electrónico" style={styles.textbox}/>
+          <Text>  Contraseña</Text>
+          <TextInput placeholder="  Contraseña" secureTextEntry={true} style={styles.textbox}/>
         </View>
         <View style={styles.btn}>
-          <Button title="Ingresar" color='#3491cd' onPress={() => navigation.navigate('Consejo')}>Registrate</Button>
+          <Button  title="Ingresar" color='#3491cd' onPress={() => navigation.navigate('Consejo')}>Ingresar</Button>
           <Text style={styles.blacktext}>¿No tienes una cuenta?</Text>
           <Button title="Registrate" color="#3491cd" onPress={() => navigation.navigate('Registro')}>Registrate</Button>
         </View>
@@ -40,6 +62,8 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     color: 'black',
     margin: '2%',
+    fontFamily: 'montserrat-light',
+    marginTop: "8%",
   },
   textbox:{
     margin: "2%",
@@ -48,6 +72,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.3,
     borderRadius: 10,
     height: 50,
+    fontFamily: 'montserrat-light',
   },
   btn:{
     flex: 1,
