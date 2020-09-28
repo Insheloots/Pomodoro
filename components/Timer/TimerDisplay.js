@@ -24,15 +24,16 @@ const styles = StyleSheet.create({
 		marginHorizontal: '31%',
 	    padding: "3%",
 	    borderColor: "#3491cd",
-	    borderRadius: 15,
+	    borderRadius: 8,
 	    borderWidth: 4,
 		alignItems: 'center',
-		backgroundColor: "#8ec1e3",
+		backgroundColor: "#3491cd",
 		width: "40%",
 	},
 	textStyle: {
 		color: "white",
 	    fontSize: 30,
-	    fontWeight: "400",
+		fontWeight: "400",
+		fontFamily: 'montserrat-light',
 	}
 })

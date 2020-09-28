@@ -65,6 +65,6 @@ const styles = StyleSheet.create({
     flex: 1,
     borderColor: "#cccccc",
     borderBottomWidth: 1,
-    marginBottom: 10
+	marginBottom: 10,
   },
 });

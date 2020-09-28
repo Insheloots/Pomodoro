@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   textbox:{
     margin: "2%",
     borderColor: 'black',
-    fontSize: 14,
+    fontSize: 13,
     borderWidth: 0.3,
     borderRadius: 10,
     height: 50,

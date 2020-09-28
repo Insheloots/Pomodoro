@@ -11,11 +11,11 @@ class TimerButtons extends React.Component {
 			return (
 				<View style={styles.container}>
 					<TouchableOpacity style={styles.buttonStyle} onPress={this.props.pause}>
-						<Text style={styles.buttonText}>PAUSAR</Text>
+						<Text style={styles.buttonText}>Pausar</Text>
 					</TouchableOpacity>
 
 					<TouchableOpacity style={styles.buttonStyle} onPress={this.props.reset}>
-						<Text style={styles.buttonText}>REINICIAR</Text>
+						<Text style={styles.buttonText}>Reiniciar</Text>
 					</TouchableOpacity>
 				</View>
 			)
@@ -25,7 +25,7 @@ class TimerButtons extends React.Component {
 			return(
 				<View  style={styles.container}>
 					<TouchableOpacity style={styles.buttonStyle} onPress={this.props.play}>
-						<Text style={styles.buttonText}>INICIAR</Text>
+						<Text style={styles.buttonText}>Iniciar</Text>
 					</TouchableOpacity>
 				</View>
 			)
@@ -45,15 +45,16 @@ const styles=StyleSheet.create({
 	},
 	buttonStyle:{
 		alignItems: "center",
-		backgroundColor: '#8ec1e3',
+		backgroundColor: '#3491cd',
 		padding: 15,
-		marginVertical: "-6%",
+		marginVertical: "-7%",
 		borderColor: '#3491cd',
-		borderRadius: 15,
-	    flexDirection: "row" ,
+		borderRadius: 8,
+		flexDirection: "row" ,
 	}, 
 	 buttonText: {
-	    color: "white",
+		color: "white",
+		fontFamily: 'montserrat-light',
 		fontSize: 14,
 	    fontWeight: "300",
   	}

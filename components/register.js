@@ -3,10 +3,10 @@ import { Text, View, StyleSheet, TextInput, Alert, ScrollView, TouchableOpacity 
 
 export default function register({navigation}){
   return(
-    <ScrollView>
+    <ScrollView style={{backgroundColor: 'white'}}>
       <View style={styles.container}>
         <View style={styles.top}>
-          <Text style={{fontSize: 15, textAlign: 'center', fontFamily: 'montserrat-bold', marginVertical:'7%', marginHorizontal:'10%'}}>
+          <Text style={{fontSize: 15, textAlign: 'center', fontFamily: 'montserrat-bold', marginVertical:'5%', marginHorizontal:'10%'}}>
             Para disfrutar de nuestro aplicativo, debes primero registrarte</Text>
         </View>
         <View style={styles.center}>
@@ -14,7 +14,7 @@ export default function register({navigation}){
           <TextInput placeholder="Ingresa tu nombre(s)" style={styles.textbox}/>
           <Text style={styles.text}> Apellidos</Text>
           <TextInput placeholder="Ingresa tu apellido(s)" style={styles.textbox}/>
-          <Text style={styles.text}> Correo electronico</Text>
+          <Text style={styles.text}> Correo electrónico</Text>
           <TextInput placeholder="Ingresa tu correo electrónico" style={styles.textbox}/>
           <Text style={styles.text}> Contraseña</Text>
           <TextInput placeholder="Ingresa tu contraseña" secureTextEntry={true} style={styles.textbox}/>
@@ -53,26 +53,11 @@ center: {
   width: "80%",
   paddingVertical: '10%',
 },  
-blacktext:{
-  fontSize: 14,
-  marginHorizontal:33,
-  textAlign: 'justify',
-  fontStyle: 'normal',
-  marginTop: 15,
-  color: 'black',
-},
-blacktext2:{
-  fontSize: 14,
-  marginHorizontal:33,
-  textAlign: 'justify',
-  fontStyle: 'normal',
-  marginTop: 2,
-  color: 'black',
-},
 textbox:{
   marginVertical: '3%',
   borderColor: 'black',
-  fontSize: 14,
+  fontFamily: 'montserrat-light',
+  fontSize: 13,
   borderRadius: 10,
   borderWidth: 0.4,
   paddingHorizontal: 16,
