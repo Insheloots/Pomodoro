@@ -32,24 +32,27 @@ export default function login({navigation}){
           <TextInput placeholder="Ingresa tu correo electrónico" style={styles.textbox}/>
           <Text>  Contraseña</Text>
           <TextInput placeholder="Contraseña" secureTextEntry={true} style={styles.textbox}/>
-          <View style={styles.btn}>
-            <Button title="Ingresar" color='#3491cd' onPress={() => navigation.navigate('Consejo')}>Ingresar</Button>
+            <TouchableOpacity onPress={() => navigation.navigate('Consejo')}>
+            <View style={styles.btnView}>
+              <Text style={styles.buttonText}>Ingresar</Text>
+              </View>
+            </TouchableOpacity>
             <Text style={styles.blacktext}>¿No tienes una cuenta?</Text>
-            <Button title="Registrate" color="#3491cd" onPress={() => navigation.navigate('Registro')}>Registrate</Button>
+            <TouchableOpacity onPress={() => navigation.navigate('Registro')}>
+            <View style={styles.btnView}>
+              <Text style={styles.buttonText}>Registrate</Text>
+              </View>
+            </TouchableOpacity>
           </View>
-          
         </View>
-      </View>
     )
 }
       
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-   
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    
   }, 
   profileimage: {
     flex: 1,
@@ -81,6 +84,19 @@ const styles = StyleSheet.create({
     flex: 1,
     marginVertical: '20%',
     overflow: 'scroll',
+  },
+  buttonText: {
+    color: 'white',
+    fontFamily: 'montserrat-light',
+    fontSize: 14,
+    textAlign: 'center',
+  },
+  btnView:{
+    borderRadius: 8,
+    paddingVertical: 10,
+    marginTop: 15,
+    paddingHorizontal: 10,
+    backgroundColor: '#3491cd'
   },
   img:{ 
     resizeMode: 'contain',
