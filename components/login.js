@@ -29,9 +29,9 @@ export default function login({navigation}){
           </View>
         <View style={styles.center}>
           <Text>  Correo Electronico</Text>
-          <TextInput placeholder="  Ingresa tu correo electrónico" style={styles.textbox}/>
+          <TextInput placeholder="Ingresa tu correo electrónico" style={styles.textbox}/>
           <Text>  Contraseña</Text>
-          <TextInput placeholder="  Contraseña" secureTextEntry={true} style={styles.textbox}/>
+          <TextInput placeholder="Contraseña" secureTextEntry={true} style={styles.textbox}/>
         </View>
         <View style={styles.btn}>
           <Button  title="Ingresar" color='#3491cd' onPress={() => navigation.navigate('Consejo')}>Ingresar</Button>
@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height: 50,
     fontFamily: 'montserrat-light',
+    paddingHorizontal: 16,
   },
   btn:{
     flex: 1,

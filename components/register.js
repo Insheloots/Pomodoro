@@ -10,13 +10,13 @@ export default function register({navigation}){
           </View>
           <View style={styles.center}>
             <Text> Nombre</Text>
-            <TextInput placeholder="  Ingresa tu nombre(s)" style={styles.textbox}/>
+            <TextInput placeholder="Ingresa tu nombre(s)" style={styles.textbox}/>
             <Text> Apellidos</Text>
-            <TextInput placeholder="  Ingresa tu apellido(s)" style={styles.textbox}/>
+            <TextInput placeholder="Ingresa tu apellido(s)" style={styles.textbox}/>
             <Text> Correo electronico</Text>
-            <TextInput placeholder="  Ingresa tu correo electrónico" style={styles.textbox}/>
+            <TextInput placeholder="Ingresa tu correo electrónico" style={styles.textbox}/>
             <Text> Contraseña</Text>
-            <TextInput placeholder="  Ingresa tu contraseña" secureTextEntry={true} style={styles.textbox}/>
+            <TextInput placeholder="Ingresa tu contraseña" secureTextEntry={true} style={styles.textbox}/>
           </View>
         <View style={styles.bottom}>
           <Button title="Registrar" onPress={() => Alert.alert('Te has registrado correctamente')}/>
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     borderRadius: 13,
     borderWidth: 0.4,
+    paddingHorizontal: 16,
     height: 50,
   },
   btn: {
