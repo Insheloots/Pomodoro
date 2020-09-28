@@ -32,11 +32,12 @@ export default function login({navigation}){
           <TextInput placeholder="Ingresa tu correo electrónico" style={styles.textbox}/>
           <Text>  Contraseña</Text>
           <TextInput placeholder="Contraseña" secureTextEntry={true} style={styles.textbox}/>
-        </View>
-        <View style={styles.btn}>
-          <Button  title="Ingresar" color='#3491cd' onPress={() => navigation.navigate('Consejo')}>Ingresar</Button>
-          <Text style={styles.blacktext}>¿No tienes una cuenta?</Text>
-          <Button title="Registrate" color="#3491cd" onPress={() => navigation.navigate('Registro')}>Registrate</Button>
+          <View style={styles.btn}>
+            <Button title="Ingresar" color='#3491cd' onPress={() => navigation.navigate('Consejo')}>Ingresar</Button>
+            <Text style={styles.blacktext}>¿No tienes una cuenta?</Text>
+            <Button title="Registrate" color="#3491cd" onPress={() => navigation.navigate('Registro')}>Registrate</Button>
+          </View>
+          
         </View>
       </View>
     )
@@ -45,23 +46,24 @@ export default function login({navigation}){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-around',
+   
+    justifyContent: 'space-evenly',
     alignItems: 'center',
+    
   }, 
   profileimage: {
     flex: 1,
     justifyContent: 'center',
   },
   center: {
-    flex: 1,
-    justifyContent: 'flex-start',
+    flex: 2,
     width: '80%',
+    overflow: 'scroll',
   },
   blacktext:{
     fontSize: 14,
     fontStyle: 'normal',
     color: 'black',
-    margin: '2%',
     fontFamily: 'montserrat-light',
     marginTop: "8%",
   },
@@ -75,12 +77,10 @@ const styles = StyleSheet.create({
     fontFamily: 'montserrat-light',
     paddingHorizontal: 16,
   },
-  btn:{
+  btn: {
     flex: 1,
-    margin: 'auto',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    width: '80%',
+    marginVertical: '20%',
+    overflow: 'scroll',
   },
   img:{ 
     resizeMode: 'contain',
