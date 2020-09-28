@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text, View, StyleSheet, TextInput, Button, Alert } from 'react-native';
+import { Text, View, StyleSheet, TextInput, Button, Alert, ScrollView } from 'react-native';
 
 export default function register({navigation}){
     return(
+      <ScrollView>
         <View style={styles.container}>
           <View style={styles.top}>
             <Text style={{fontSize: 18, textAlign: 'center', fontStyle: 'normal', fontWeight: 'bold', marginVertical:'7%', marginHorizontal:'10%', color: 'black'}}>
@@ -17,14 +18,16 @@ export default function register({navigation}){
             <TextInput placeholder="Ingresa tu correo electrónico" style={styles.textbox}/>
             <Text> Contraseña</Text>
             <TextInput placeholder="Ingresa tu contraseña" secureTextEntry={true} style={styles.textbox}/>
+
+            {/* Botones */}
+            <View style={styles.btn}>
+              <Button title="Registrar" onPress={() => Alert.alert('Te has registrado correctamente')}/>
+              <Button title="Volver" onPress={() => navigation.navigate('Inicio de Sesion')}>Volver</Button>
+            </View>
+
           </View>
-        <View style={styles.bottom}>
-          <Button title="Registrar" onPress={() => Alert.alert('Te has registrado correctamente')}/>
-        </View>
-        <View style={styles.btn}>
-          <Button style={styles.btn} title="Volver" onPress={() => navigation.navigate('Inicio de Sesion')}>Volver</Button>
-        </View>
       </View>
+    </ScrollView>
     )
 }
 
@@ -33,21 +36,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
+    paddingVertical: '7%',
   },
   top: {
     flex: 1,
     justifyContent: "center",
   },
   center: {
+    flex: 1,
     flexDirection: "column",
     width: "80%",
-  },
-  bottom: {
-    flex: 1,
-    margin: "auto",
-    flexDirection: "column",
-    justifyContent: "center",
-    width: "75%",
+    paddingVertical: '10%',
   },  
   blacktext:{
     fontSize: 14,
@@ -69,13 +68,13 @@ const styles = StyleSheet.create({
     marginVertical: '3%',
     borderColor: 'black',
     fontSize: 14,
-    borderRadius: 13,
+    borderRadius: 10,
     borderWidth: 0.4,
     paddingHorizontal: 16,
     height: 50,
   },
   btn: {
-    flex: 1,
-    width: "75%",
+    paddingVertical: '5%',
+    marginVertical: '5%',
   },
 });

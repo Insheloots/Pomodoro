@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { Text, View, StyleSheet, Image, TextInput, Button,TouchableOpacity} from 'react-native';
+import { Text, View, StyleSheet, Image, TextInput, Button,TouchableOpacity, ScrollView} from 'react-native';
 
 import * as Font from 'expo-font';
 
@@ -23,6 +23,7 @@ export default function login({navigation}){
     }
     
     return(
+      <ScrollView>
         <View style={styles.container}>
           <View style={styles.profileimage}>
             <Image style={styles.img} source = {require('../src/imgs/logo.png')}/>
@@ -37,35 +38,35 @@ export default function login({navigation}){
             <Text style={styles.blacktext}>¿No tienes una cuenta?</Text>
             <Button title="Registrate" color="#3491cd" onPress={() => navigation.navigate('Registro')}>Registrate</Button>
           </View>
-          
         </View>
-      </View>
+        </View>
+    </ScrollView>
     )
 }
       
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-   
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    
   }, 
   profileimage: {
     flex: 1,
     justifyContent: 'center',
+    paddingVertical: '15%',
   },
   center: {
-    flex: 2,
+    flex: 1,
     width: '80%',
-    overflow: 'scroll',
+    paddingVertical: '5%',
   },
   blacktext:{
     fontSize: 14,
     fontStyle: 'normal',
     color: 'black',
     fontFamily: 'montserrat-light',
-    marginTop: "8%",
+    marginTop: '8%',
+    marginBottom: '2%',
   },
   textbox:{
     margin: "2%",
@@ -80,10 +81,9 @@ const styles = StyleSheet.create({
   btn: {
     flex: 1,
     marginVertical: '20%',
-    overflow: 'scroll',
   },
   img:{ 
     resizeMode: 'contain',
-    width: 260
+    width: 260,
   }
 });
