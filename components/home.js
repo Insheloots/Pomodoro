@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
 
 export default function home({navigation}){
 
         return(
-
+            <ScrollView style={{backgroundColor: 'white'}}>
             <View style={styles.container}>
                 <Image style={{width: '100%', height: 300, resizeMode: 'contain',}} source={require('../assets/images/logo-home.png')}/>
 
@@ -20,7 +20,7 @@ export default function home({navigation}){
                     >
                         <Text style={{ textAlign: 'center', color: '#FFF', fontSize: 18}}>Iniciar</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity
+                    <TouchableOpacity onPress={() => navigation.navigate('Registro')}
                         style={{ backgroundColor: '#FFF', padding: 10, width: 150, borderRadius: 30, 
                         marginHorizontal: 2, borderWidth: 1, borderColor: '#0d47a1', }}
                     >   
@@ -31,13 +31,13 @@ export default function home({navigation}){
                 <Text style={{fontSize: 16, marginTop: 10, }}>O puedes iniciar sesion con Google</Text>
                 <View style={{ flexDirection: 'row', marginTop: 20}}>
                     <View style={{height: 50, width: 50, borderRadius: 50/2, backgroundColor: '#f44336',
-                        alignItems: 'center', justifyContent: 'center'}}>
+                        alignItems: 'center', justifyContent: 'center', marginBottom: 20}}>
 
                         <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#FFF'}}>G</Text>
                     </View>
                 </View>
             </View>
-
+            </ScrollView>
             
           
         );
