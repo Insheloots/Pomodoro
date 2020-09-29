@@ -31,7 +31,7 @@ export default function home({navigation}){
                 <Text style={{fontSize: 16, marginTop: 10, }}>O puedes iniciar sesion con Google</Text>
                 <View style={{ flexDirection: 'row', marginTop: 20}}>
                     <View style={{height: 50, width: 50, borderRadius: 50/2, backgroundColor: '#f44336',
-                        alignItems: 'center', justifyContent: 'center', marginBottom: 20}}>
+                        alignItems: 'center', justifyContent: 'center', marginBottom: 15}}>
 
                         <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#FFF'}}>G</Text>
                     </View>
