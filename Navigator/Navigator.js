@@ -14,22 +14,27 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'Home'
                 component = {Home}
+                options={{ headerShown: false }}
             />
             <Stack.Screen
                 name= 'Inicio de Sesion'
                 component={Login}
+                options={{ headerShown: false }}
             />
             <Stack.Screen
                 name= 'Registro'
                 component={Register}
+                options={{ headerShown: false }}
             />
             <Stack.Screen
                 name= 'Consejo'
                 component={Tip}
+                options={{ headerShown: false }}
             />
             <Stack.Screen
                 name= 'Temporizador Pomodoro'
                 component={Timer}
+                options={{ headerShown: false }}
             />
             
         </Stack.Navigator>
