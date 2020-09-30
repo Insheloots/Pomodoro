@@ -41,6 +41,7 @@ const styles=StyleSheet.create({
 		flexDirection: "row" ,
 		marginLeft: 20, 
 		justifyContent: 'space-evenly',
+		marginVertical: '1%',
 		marginBottom: 20
 	},
 	buttonStyle:{

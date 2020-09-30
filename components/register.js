@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 container: {
   flex: 1,
   alignItems: "center",
-  paddingVertical: '2%',
+  paddingVertical: '7%',
 },
 top: {
   flex: 1,
@@ -51,7 +51,7 @@ center: {
   flex: 1,
   flexDirection: "column",
   width: "80%",
-  paddingVertical: '10%',
+  paddingVertical: '6%',
 },  
 textbox:{
   marginVertical: '3%',

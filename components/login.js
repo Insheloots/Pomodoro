@@ -27,7 +27,7 @@ export default function login({navigation}){
       <ScrollView style={{backgroundColor: 'white'}}>
         <View style={styles.container}>
           <View style={styles.profileimage}>
-            <Image style={styles.img} source = {require('../src/imgs/logo.png')}/>
+            <Image style={styles.img} source = {require('../assets/images/logo.png')}/>
           </View>
         <View style={styles.center}>
           <Text style={styles.text}>  Correo Electronico</Text>
@@ -61,12 +61,12 @@ const styles = StyleSheet.create({
   profileimage: {
     flex: 1,
     justifyContent: 'center',
-    paddingVertical: '6%',
+    paddingVertical: '14%',
   },
   center: {
     flex: 1,
     width: '80%',
-    paddingVertical: '5%',
+    paddingVertical: '2%',
   },
   blacktext:{
     fontSize: 14,
@@ -92,7 +92,8 @@ const styles = StyleSheet.create({
   },
   img:{ 
     resizeMode: 'contain',
-    width: 260,
+    width: 220,
+    height: 120,
   },
   buttonText: {
     color: 'white',

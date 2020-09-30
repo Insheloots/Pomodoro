@@ -1,12 +1,15 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, ScrollView, Image} from 'react-native';
 
 export default function Tip({navigation}){
     return(
       <ScrollView style={{backgroundColor: 'white'}}>
       <View style={styles.container}>
+      <View style={styles.profileimage}>
+            <Image style={styles.img} source = {require('../assets/images/logo.png')}/>
+          </View>
         <View style={styles.top}>
-        <Text style={{fontSize: 16, textAlign: 'center', fontFamily: 'montserrat-bold', marginVertical:'5%', marginHorizontal:'10%'}}>
+        <Text style={{fontSize: 15, textAlign: 'center', fontFamily: 'montserrat-bold', marginVertical:'5%', marginHorizontal:'10%'}}>
         Antes de empezar, debes de tener en cuenta esto:</Text>
         </View>
         <View style={styles.center}>
@@ -41,11 +44,7 @@ const styles = StyleSheet.create({
     center: {
       flex: 1,
       width: '80%',
-      paddingVertical: '5%',
-    },
-    text: {
-      fontFamily: 'montserrat-light',
-      fontSize: 14,
+      paddingVertical: '4%',
     },
     buttonText: {
       color: 'white',
@@ -55,13 +54,19 @@ const styles = StyleSheet.create({
     },
     btnView:{
       borderRadius: 8,
-      paddingVertical: 10,
+      paddingVertical: 8,
       marginTop: 16,
       paddingHorizontal: 10,
       backgroundColor: '#3491cd'
     },
     text: {
       fontFamily: 'montserrat-light',
-      fontSize: 15,
+      paddingBottom: 8,
+      fontSize: 14,
+    },
+    img:{ 
+      resizeMode: 'contain',
+      width: 220,
+      height: 120,
     }
   });

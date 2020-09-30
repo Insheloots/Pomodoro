@@ -45,9 +45,10 @@ class TimerHeader extends React.Component {
 const styles = StyleSheet.create({
   blacktext:{
 	marginHorizontal:'9%',
+	marginVertical: '1%',
 	textAlign: 'center',
 	fontStyle: 'normal',
-	marginTop: '12%',
+	marginTop: '15%',
 	color: 'black',
 	fontFamily: 'montserrat-light',
   }
