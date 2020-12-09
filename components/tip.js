@@ -9,7 +9,7 @@ export default function Tip({navigation}){
             <Image style={styles.img} source = {require('../assets/images/logo.png')}/>
           </View>
         <View style={styles.top}>
-        <Text style={{fontSize: 15, textAlign: 'center', fontFamily: 'montserrat-bold', marginVertical:'5%', marginHorizontal:'10%'}}>
+        <Text style={{fontSize: 15, textAlign: 'center', marginVertical:'5%', marginHorizontal:'10%'}}>
         Antes de empezar, debes de tener en cuenta esto:</Text>
         </View>
         <View style={styles.center}>
@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
     },
     buttonText: {
       color: 'white',
-      fontFamily: 'montserrat-light',
       fontSize: 14,
       textAlign: 'center',
     },
@@ -60,7 +59,6 @@ const styles = StyleSheet.create({
       backgroundColor: '#3491cd'
     },
     text: {
-      fontFamily: 'montserrat-light',
       paddingBottom: 8,
       fontSize: 14,
     },

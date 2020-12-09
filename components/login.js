@@ -40,7 +40,7 @@ export default function login({navigation}){
               </View>
             </TouchableOpacity>
             <Text style={styles.blacktext}>¿No tienes una cuenta?</Text>
-            <TouchableOpacity onPress={() => navigation.navigate('Registro')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Registrop')}>
             <View style={styles.btnView}>
               <Text style={styles.buttonText}>Registrate</Text>
               </View>

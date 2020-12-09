@@ -6,6 +6,9 @@ import Register from '../components/register'
 import Tip from '../components/tip'
 import Timer from '../components/Timer/PomodoroTimer'
 import Home from '../components/home'
+import LoginScreen from '../components/LoginScreen'
+import RegisterScreen from '../components/RegisterScreen'
+
 const Stack = createStackNavigator()
 
 export default function Navigator(){
@@ -17,13 +20,13 @@ export default function Navigator(){
                 options={{ headerShown: false }}
             />
             <Stack.Screen
-                name= 'Inicio de Sesion'
-                component={Login}
+                name = 'Inicio de Sesion'
+                component = {LoginScreen}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
-                name= 'Registro'
-                component={Register}
+                name = 'Registro'
+                component = {RegisterScreen}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
