@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 class TimerButtons extends React.Component {
 	state = {};
@@ -55,7 +55,6 @@ const styles=StyleSheet.create({
 	}, 
 	 buttonText: {
 		color: "white",
-		fontFamily: 'montserrat-light',
 		fontSize: 14,
 	    fontWeight: "300",
   	}

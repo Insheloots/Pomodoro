@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, View, Alert} from 'react-native';
+import { Platform, StyleSheet, Text} from 'react-native';
 
 class TimerHeader extends React.Component {
 
@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
 	fontStyle: 'normal',
 	marginTop: '15%',
 	color: 'black',
-	fontFamily: 'montserrat-light',
   }
 });
 

@@ -34,6 +34,5 @@ const styles = StyleSheet.create({
 		color: "white",
 	    fontSize: 30,
 		fontWeight: "400",
-		fontFamily: 'montserrat-light',
 	}
 })

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, View, TextInput } from 'react-native';
 import Timer from './Timer'
 
 class PomodoroTimer extends React.Component {
@@ -55,16 +54,3 @@ class PomodoroTimer extends React.Component {
 }
 
 export default PomodoroTimer;
-
-const styles = StyleSheet.create({
-   row: {
-    flex: 1,
-    flexDirection: "row",
-  },
-  inputWrap: {
-    flex: 1,
-    borderColor: "#cccccc",
-    borderBottomWidth: 1,
-	marginBottom: 10,
-  },
-});

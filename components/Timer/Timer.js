@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, View, TextInput } from 'react-native';
+import {View} from 'react-native';
 import TimerHeader from './TimerHeader'
 import TimerDisplay from './TimerDisplay'
 import TimerButtons from './TimerButtons'
@@ -64,6 +64,7 @@ class Timer extends React.Component {
 		this.setState({
 			running: true
 		})
+		start();
 		this.timerId = setInterval(() =>{
 			this.setState({
 				time: this.state.time - 1
@@ -90,16 +91,4 @@ class Timer extends React.Component {
 }
 
 export default Timer;
-
-const styles = StyleSheet.create({
-  textStyle: {
-    color: "#C2362B",
-    fontSize: 25,
-    fontWeight: "500",
-    letterSpacing: 1.5,
-    marginTop: 40,
-    padding: 20
-  }
-});
-
 

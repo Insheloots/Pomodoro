@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, Image, TextInput, TouchableOpacity, Button, ScrollView} from 'react-native'
+import {Text, View, StyleSheet, Image, TextInput, Alert, TouchableOpacity, ScrollView} from 'react-native'
 import React, {Component} from 'react'
 import * as firebase from 'firebase'
 
@@ -31,6 +31,13 @@ export default class login extends React.Component{
         })
         .catch(() => {
             this.setState({error:'Autenticación fallida', loading:false});
+              Alert.alert('El correo o la contraseña que ingreso no estan correctos.')
+            if(email === ''){
+              Alert.alert('Debes de digitar un correo.')
+            }
+            if(password === ''){
+              Alert.alert('Debes de digitar una contraseña.')
+            }
         })
     }
         onRegisterPress(){
