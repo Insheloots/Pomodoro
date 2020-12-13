@@ -1,9 +1,8 @@
 import React from 'react';
-import { Platform, StyleSheet, Text} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, TouchableOpacity} from 'react-native';
+import {Icon} from 'react-native-elements';
 
-class TimerHeader extends React.Component {
-
-	// handles the display of timer header
+export default class TimerHeader extends React.Component {
 	handleDisplay = () => {
 		if(this.props.intervalType === "Trabajando")
 		{
@@ -33,11 +32,15 @@ class TimerHeader extends React.Component {
 		}
 
 	}
+
 	render() {
 	
 		let texttoshow = this.handleDisplay()
+
 		return(
-			<Text style={styles.blacktext}>{texttoshow}</Text>
+			<ScrollView>
+				<Text style={styles.blacktext}>{texttoshow}</Text>
+			</ScrollView>
 		)				
 	}
 }
@@ -48,9 +51,17 @@ const styles = StyleSheet.create({
 	marginVertical: '1%',
 	textAlign: 'center',
 	fontStyle: 'normal',
-	marginTop: '15%',
+	marginTop: '55%',
 	color: 'black',
+  },
+  container2: {
+	flex: 1,
+	flexDirection: 'row',
+	alignItems: 'center',
+	justifyContent: 'center',
+  },
+  buttonContainer: {
+	flex: 1,
+	marginHorizontal: '15%',
   }
 });
-
-export default TimerHeader;

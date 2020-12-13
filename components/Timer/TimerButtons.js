@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 class TimerButtons extends React.Component {
 	state = {};
 
-	//renders pause, play and reset buttons
 	render() {
 		if(this.props.running === true)
 		{
@@ -33,7 +32,7 @@ class TimerButtons extends React.Component {
 	}
 }
 
-
+export default TimerButtons;
 
 const styles=StyleSheet.create({
 	container:{
@@ -59,5 +58,3 @@ const styles=StyleSheet.create({
 	    fontWeight: "300",
   	}
 })
-
-export default TimerButtons

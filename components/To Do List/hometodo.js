@@ -1,22 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
-
-import {
-  Keyboard,
-  Alert,
-  KeyboardAvoidingView,
-  Platform,
-  AsyncStorage
-} from "react-native";
-
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  FlatList
-} from "react-native";
+import { Keyboard, Alert, KeyboardAvoidingView, Platform, AsyncStorage, ScrollView} from "react-native";
+import {StyleSheet, Text, View, TextInput, TouchableOpacity, FlatList} from "react-native";
+import {Icon} from 'react-native-elements';
 
 export default function hometodo({navigation}) {
   const [task, setTask] = useState([]);
@@ -27,6 +13,11 @@ export default function hometodo({navigation}) {
 
     if (search.length !== 0) {
       Alert.alert("Atención", "Has repetido el nombre de la tarea.");
+      return;
+    }
+
+    if (newTask === "") {
+      Alert.alert("Atención", "No puedes añadir una tarea en blanco.");
       return;
     }
 
@@ -76,7 +67,6 @@ export default function hometodo({navigation}) {
   }, [task]);
 
   return (
-    <>
       <KeyboardAvoidingView
         keyboardVerticalOffset={0}
         behavior="padding"
@@ -124,9 +114,32 @@ export default function hometodo({navigation}) {
               <Ionicons name="ios-add" size={20} color="white" />
             </TouchableOpacity>
           </View>
+          <View style={styles.Form2}>
+          <View style={styles.container2}>
+            	<TouchableOpacity style={{marginTop: '2%'}} onPress={() => navigation.navigate('ToDoList')}>
+                	<View style={styles.buttonContainer}>
+                    	<Icon name='sticky-note-o' color='#135D81' type='font-awesome'/>
+                	</View>
+            	</TouchableOpacity>
+            	<TouchableOpacity style={{marginTop: '2%'}} onPress={() => navigation.navigate('RHome')}>
+                	<View style={styles.buttonContainer}>
+                    	<Icon name='lightbulb-o' color='#3491cd' type='font-awesome'/>
+                	</View>
+            	</TouchableOpacity>
+            	<TouchableOpacity style={{marginTop: '2%'}} onPress={() => navigation.navigate('Music')}>
+                	<View style={styles.buttonContainer}>
+                    	<Icon name='music' color='#3491cd' type='font-awesome'/>
+                	</View>
+            	</TouchableOpacity>
+              <TouchableOpacity style={{marginTop: '2%'}} onPress={() => navigation.navigate('PretestPostestHome')}>
+                	<View style={styles.buttonContainer}>
+                    	<Icon name='book' color='#3491cd' type='font-awesome'/>
+                	</View>
+            	</TouchableOpacity>
+            </View>
+          </View>
         </View>
       </KeyboardAvoidingView>
-    </>
   );
 }
 
@@ -147,8 +160,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignSelf: "stretch",
     flexDirection: "row",
-    paddingTop: 13,
-    borderTopWidth: 1,
+    paddingTop: 18,
     borderColor: "#eee"
   },
   Input: {
@@ -193,4 +205,21 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#eee"
   },
+  Form2: {
+    padding: 0,
+    height: 45,
+    alignSelf: "stretch",
+    paddingTop: 13,
+    borderColor: "#eee"
+  },
+  container2: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonContainer: {
+    flex: 1,
+    marginHorizontal: '11%',
+  }
 });

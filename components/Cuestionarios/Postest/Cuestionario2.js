@@ -18,7 +18,7 @@ if (!firebase.apps.length){
 }
 const db = firebase.firestore();
 
-export default function Cuestionario({navigation}) {
+export default function Cuestionario2({navigation}) {
     
     const [state, setState] = useState({
         primera: "",
@@ -55,12 +55,13 @@ export default function Cuestionario({navigation}) {
             doceava: state.doceava
         })
         Alert.alert('Se ha enviado el cuestionario de Postest correctamente.')
+        navigation.navigate('Consejo')
     }
 
     return (
         <ScrollView>
             <View style={styles.center}>
-                <Text style={styles.text}>1. ¿Qué edad tiene?</Text>
+                <Text style={styles.text}>1. Edad:</Text>
                 <Picker onValueChange={(value) => EstablecerTexto('primera', value)} selectedValue={state.primera}>
                     <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
                     <Picker.Item label="Entre 14 y 24" value="Entre 14 y 24"/>

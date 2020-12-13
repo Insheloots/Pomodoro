@@ -1,5 +1,5 @@
 import {Text, View, StyleSheet, Alert, TextInput, TouchableOpacity, ScrollView} from 'react-native'
-import React, {Component} from 'react'
+import React from 'react'
 import * as firebase from 'firebase'
 
 const firebaseConfig = {
@@ -16,7 +16,7 @@ if (!firebase.apps.length){
     firebase.initializeApp(firebaseConfig);
 }
 
-export default class login extends React.Component{
+export default class RegisterScreen extends React.Component{
     constructor(props){
         super(props);
         this.state = {email:'', password:'', error:'', loading:false};

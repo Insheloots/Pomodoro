@@ -51,12 +51,13 @@ export default function Cuestionario({navigation}) {
             decima: state.decima
         })
         Alert.alert('Se ha enviado el cuestionario de Pretest correctamente.')
+        navigation.navigate('Consejo')
     }
 
     return (
         <ScrollView>
             <View style={styles.center}>
-                <Text style={styles.text}>1. ¿Qué edad tiene?</Text>
+                <Text style={styles.text}>1. Edad:</Text>
                 <Picker onValueChange={(value) => EstablecerTexto('primera', value)} selectedValue={state.primera}>
                     <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
                     <Picker.Item label="Entre 14 y 24" value="Entre 14 y 24"/>

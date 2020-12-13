@@ -2,7 +2,6 @@ import React from 'react';
 import Timer from './Timer'
 
 class PomodoroTimer extends React.Component {
-
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -12,7 +11,6 @@ class PomodoroTimer extends React.Component {
 		}
 	}
 
-	// handles completion of timer
 	handleTimerCompleted = () => {
 		if(this.state.intervalType === "Trabajando")
 		{
@@ -28,8 +26,6 @@ class PomodoroTimer extends React.Component {
 		}
 	}
 
-
-	// called to set the timer's time
 	handleTime = () => {
 		if(this.state.intervalType === "Trabajando")
 		{

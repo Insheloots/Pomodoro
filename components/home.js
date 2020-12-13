@@ -1,8 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
 
-export default function home({navigation}){
+export default function Home({navigation}){
 
         return(
             <ScrollView style={{backgroundColor: 'white'}}>
