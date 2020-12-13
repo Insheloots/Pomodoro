@@ -5,6 +5,9 @@ import LoginScreen from '../components/LoginScreen'
 import RegisterScreen from '../components/RegisterScreen'
 import Tip from '../components/tip'
 import ToDo from '../components/To Do List/hometodo'
+import hometodoindividual from '../components/To Do List/hometodoindividual'
+import hometodoparejas from '../components/To Do List/hometodoparejas'
+import hometodogrupal from '../components/To Do List/hometodogrupal'
 import Timer from '../components/Timer/PomodoroTimer'
 import Pretest from '../components/Cuestionarios/Pretest/Cuestionario'
 import Postest from '../components/Cuestionarios/Postest/Cuestionario2'
@@ -24,6 +27,21 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'ToDoList'
                 component = {ToDo}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'hometodoindividual'
+                component = {hometodoindividual}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'hometodoparejas'
+                component = {hometodoparejas}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'hometodogrupal'
+                component = {hometodogrupal}
                 options={{ headerShown: false }}
             />
             <Stack.Screen

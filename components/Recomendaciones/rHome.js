@@ -3,7 +3,7 @@ import {View, ScrollView, StyleSheet, Text, TouchableOpacity} from 'react-native
 import 'firebase/firestore'
 import {Icon} from 'react-native-elements'
 
-export default function rRecomendaciones({navigation}) {
+export default function rHome({navigation}) {
     return (
         <ScrollView>
         <View style={styles.container}>
