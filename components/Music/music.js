@@ -6,19 +6,19 @@ import {Icon} from 'react-native-elements'
 export default function Music({navigation}) {
 
 const Llovizna = async () => {
-    await Linking.openURL('https://youtu.be/Mr9T-943BnE');
+    await Linking.openURL('https://youtu.be/F-toHGbg71g');
 };
 
 const Naturaleza = async () => {
-    await Linking.openURL('https://youtu.be/aWZR_lZ7eKU');
+    await Linking.openURL('https://youtu.be/2jiNaLxAYwo');
 };
 
 const NCS = async () => {
-    await Linking.openURL('https://youtu.be/CSSKNCYaQUA');
+    await Linking.openURL('https://youtu.be/cRHD8ZPl2vI');
 };
 
 const LOFI = async () => {
-    await Linking.openURL('https://youtu.be/ZqwfusOI3Xo');
+    await Linking.openURL('https://youtu.be/C_z5ljT3xyk');
 };
 
     return (
