@@ -11,6 +11,7 @@ import hometodogrupal from '../components/To Do List/hometodogrupal'
 import Timer from '../components/Timer/PomodoroTimer'
 import Pretest from '../components/Cuestionarios/Pretest/Cuestionario'
 import Postest from '../components/Cuestionarios/Postest/Cuestionario2'
+import CSeguimiento from '../components/Cuestionarios/Seguimiento/CSeguimiento'
 import PretestPostestHome from '../components/Cuestionarios/rPretestPostestHome'
 import RHome from '../components/Recomendaciones/rHome'
 import REjercicio from '../components/Recomendaciones/Actividades/rEjercicio'
@@ -27,6 +28,11 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'ToDoList'
                 component = {ToDo}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'CSeguimiento'
+                component = {CSeguimiento}
                 options={{ headerShown: false }}
             />
             <Stack.Screen

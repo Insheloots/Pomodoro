@@ -4,7 +4,7 @@ import { Keyboard, Alert, KeyboardAvoidingView, Platform, AsyncStorage, ScrollVi
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, FlatList} from "react-native";
 import {Icon} from 'react-native-elements';
 
-export default function hometodo({navigation}) {
+export default function hometodoindividual({navigation}) {
   const [task, setTask] = useState([]);
   const [newTask, setNewTask] = useState("");
 

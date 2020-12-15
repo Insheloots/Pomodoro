@@ -55,7 +55,7 @@ export default function Cuestionario2({navigation}) {
             doceava: state.doceava
         })
         Alert.alert('Se ha enviado el cuestionario de Postest correctamente.')
-        navigation.navigate('Consejo')
+        navigation.navigate('PretestPostestHome')
     }
 
     return (

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {View, ScrollView, StyleSheet, Text} from 'react-native'
+import {View, ScrollView, StyleSheet, Text, Linking} from 'react-native'
 import * as firebase from 'firebase'
 import 'firebase/firestore'
 import {ListItem} from 'react-native-elements'
@@ -20,24 +20,27 @@ if (!firebase.apps.length){
 const db = firebase.firestore();
 
 export default function rCancion({navigation}) {
-
+    
     const [respuestas, setRespuestas] = useState([])
 
     useEffect(() => {
         db.collection('RCancion').onSnapshot(querySnapshot => {
         const respuestas = [];
             querySnapshot.docs.forEach(doc =>{
-                const {nombrecancion, autorcancion, albumcancion} = doc.data() 
+                const {nombrecancion, autorcancion, albumcancion, linkcancion} = doc.data() 
                 respuestas.push({
                     id: doc.id,
                     nombrecancion,
                     autorcancion,
-                    albumcancion
+                    albumcancion,
+                    linkcancion
                 })
             })
         setRespuestas(respuestas)
         })
     }, [])
+
+    
 
     return(
         <ScrollView>
@@ -45,14 +48,18 @@ export default function rCancion({navigation}) {
                 <Text style={styles.text}>Recomendaciones de canciones:</Text>
                 </View>
                 {respuestas.map(respuesta =>{
+                    const Cancion = () => {
+                        Linking.openURL(respuesta.linkcancion);
+                    };
                     return(
-                        <ListItem key={respuesta.id} bottomDivider> 
+                        <ListItem key={respuesta.id} bottomDivider onPress={Cancion}> 
                             <ListItem.Chevron/>
                             <ListItem.Content>
                                 <ListItem.Title>Canción:</ListItem.Title>
                                 <ListItem.Subtitle>Nombre: {respuesta.nombrecancion}</ListItem.Subtitle>
                                 <ListItem.Subtitle>Autor: {respuesta.autorcancion}</ListItem.Subtitle>
                                 <ListItem.Subtitle>Álbum: {respuesta.albumcancion}</ListItem.Subtitle>
+                                <ListItem.Subtitle>Link YouTube: {respuesta.linkcancion}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     );

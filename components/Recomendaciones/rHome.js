@@ -24,7 +24,7 @@ export default function rHome({navigation}) {
         </TouchableOpacity>
         <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('PretestPostestHome')}>
             <View style={styles.buttonContainer}>
-                <Icon name='book' color='#3491cd' type='font-awesome'/>
+                <Icon name='bars' color='#3491cd' type='font-awesome'/>
             </View>
         </TouchableOpacity>
         </View>

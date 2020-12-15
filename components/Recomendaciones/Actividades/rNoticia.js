@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {View, ScrollView, StyleSheet, Text} from 'react-native'
+import {View, ScrollView, StyleSheet, Text, Linking} from 'react-native'
 import * as firebase from 'firebase'
 import 'firebase/firestore'
 import {ListItem} from 'react-native-elements'
@@ -45,13 +45,15 @@ export default function rNoticia({navigation}) {
                 <Text style={styles.text}>Noticias:</Text>
                 </View>
                 {respuestas.map(respuesta =>{
+                    const Noticia = () => {
+                        Linking.openURL(respuesta.fuentenoticia);
+                    };
                     return(
-                        <ListItem key={respuesta.id} bottomDivider> 
+                        <ListItem key={respuesta.id} bottomDivider onPress={Noticia}> 
                             <ListItem.Chevron/>
                             <ListItem.Content>
                                 <ListItem.Title>{respuesta.titulonoticia}:</ListItem.Title>
                                 <ListItem.Subtitle>{respuesta.especificacionnoticia}</ListItem.Subtitle>
-                                <ListItem.Subtitle>Fuente: {respuesta.fuentenoticia}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     );

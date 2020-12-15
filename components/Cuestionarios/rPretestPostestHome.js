@@ -1,9 +1,19 @@
 import React, {useState} from 'react'
-import {View, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, Alert} from 'react-native'
+import {View, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, Alert, Linking} from 'react-native'
 import 'firebase/firestore'
 import {Icon} from 'react-native-elements'
 
-export default function rRecomendaciones({navigation}) {
+const Contactanos = () => {
+    Linking.openURL('mailto: afmelo@ucundinamarca.edu.co, diegoalexanderdiaz@ucundinamarca.edu.co');
+};
+
+export default function rPretestPostestHome({navigation}) {
+    const Confirmacion = () => {
+        Alert.alert('Cerrar sesión', '¿Estás seguro que quieres cerrar sesión?', [
+            {text: 'Cancelar', onPress: console.log(false)},
+            {text: 'Aceptar', onPress: () => navigation.navigate('Inicio de Sesion')},
+        ])
+    }
     return (
         <ScrollView>
         <View style={styles.container}>
@@ -24,7 +34,7 @@ export default function rRecomendaciones({navigation}) {
         </TouchableOpacity>
         <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('PretestPostestHome')}>
             <View style={styles.buttonContainer}>
-                <Icon name='book' color='#135D81' type='font-awesome'/>
+                <Icon name='bars' color='#135D81' type='font-awesome'/>
             </View>
         </TouchableOpacity>
         </View>
@@ -42,6 +52,30 @@ export default function rRecomendaciones({navigation}) {
                 <TouchableOpacity onPress={() => navigation.navigate('Postest')}>
                 <View style={styles.btnView}>
                     <Text style={styles.buttonText}>Postest</Text>
+                </View>
+                </TouchableOpacity>
+            </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={() => navigation.navigate('CSeguimiento')}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Cuestionario de seguimiento</Text>
+                </View>
+                </TouchableOpacity>
+            </View>
+            <View style={styles.center}>
+                <Text style={styles.text}>¿Tienes alguna duda? Contáctanos:</Text>
+            </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={Contactanos}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Contáctanos</Text>
+                </View>
+                </TouchableOpacity>
+            </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={Confirmacion}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Cerrar sesión</Text>
                 </View>
                 </TouchableOpacity>
             </View>

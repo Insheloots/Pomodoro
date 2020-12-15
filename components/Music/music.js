@@ -1,9 +1,26 @@
 import React, {useState} from 'react'
-import {View, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, Alert} from 'react-native'
+import {View, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, Alert, Linking} from 'react-native'
 import 'firebase/firestore'
 import {Icon} from 'react-native-elements'
 
-export default function rRecomendaciones({navigation}) {
+export default function Music({navigation}) {
+
+const Llovizna = async () => {
+    await Linking.openURL('https://youtu.be/Mr9T-943BnE');
+};
+
+const Naturaleza = async () => {
+    await Linking.openURL('https://youtu.be/aWZR_lZ7eKU');
+};
+
+const NCS = async () => {
+    await Linking.openURL('https://youtu.be/CSSKNCYaQUA');
+};
+
+const LOFI = async () => {
+    await Linking.openURL('https://youtu.be/ZqwfusOI3Xo');
+};
+
     return (
         <ScrollView>
         <View style={styles.container}>
@@ -24,16 +41,43 @@ export default function rRecomendaciones({navigation}) {
         </TouchableOpacity>
         <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('PretestPostestHome')}>
             <View style={styles.buttonContainer}>
-                <Icon name='book' color='#3491cd' type='font-awesome'/>
+                <Icon name='bars' color='#3491cd' type='font-awesome'/>
             </View>
         </TouchableOpacity>
         </View>
             <View style={styles.center}>
-                <Text style={styles.text}>Musica:</Text>
+                <Text style={styles.text}>Música:</Text>
+            </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={Llovizna}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Sonidos de Llovizna</Text>
+                </View>
+                </TouchableOpacity>
+            </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={Naturaleza}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Sonidos de la naturaleza</Text>
+                </View>
+                </TouchableOpacity>
+            </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={NCS}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Música sin Copyright</Text>
+                </View>
+                </TouchableOpacity>
+            </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={LOFI}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Música LOFI</Text>
+                </View>
+                </TouchableOpacity>
             </View>
         </ScrollView>
     )
-
 }
 
 const styles = StyleSheet.create({

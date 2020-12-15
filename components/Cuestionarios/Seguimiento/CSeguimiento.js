@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {View, ScrollView, StyleSheet, Text, TouchableOpacity, Picker, Alert} from 'react-native'
+import {View, ScrollView, StyleSheet, Text, TouchableOpacity, Picker, Alert, TextInput} from 'react-native'
 import * as firebase from 'firebase'
 import 'firebase/firestore'
 
@@ -18,7 +18,7 @@ if (!firebase.apps.length){
 }
 const db = firebase.firestore();
 
-export default function Cuestionario({navigation}) {
+export default function CSeguimiento({navigation}) {
 
     const [state, setState] = useState({
         primera: "",
@@ -28,9 +28,6 @@ export default function Cuestionario({navigation}) {
         quinta: "",
         sexta: "",
         septima: "",
-        octava: "",
-        novena: "",
-        decima: "",
     })
 
     const EstablecerTexto = (primera, value) => {
@@ -38,7 +35,7 @@ export default function Cuestionario({navigation}) {
     }
 
     const crearRespuesta = async() => {
-        await db.collection('Pretest').add({
+        await db.collection('CSeguimiento').add({
             primera: state.primera,
             segunda: state.segunda,
             tercera: state.tercera,
@@ -46,94 +43,75 @@ export default function Cuestionario({navigation}) {
             quinta: state.quinta,
             sexta: state.sexta,
             septima: state.septima,
-            octava: state.octava,
-            novena: state.novena,
-            decima: state.decima
         })
-        Alert.alert('Se ha enviado el cuestionario de Pretest correctamente.')
+        Alert.alert('Se ha enviado el cuestionario correctamente.')
         navigation.navigate('PretestPostestHome')
     }
 
     return (
         <ScrollView>
             <View style={styles.center}>
-                <Text style={styles.text}>1. Edad:</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('primera', value)} selectedValue={state.primera}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Entre 14 y 24" value="Entre 14 y 24"/>
-                    <Picker.Item label="Entre 25 y 34" value="Entre 25 y 34"/>
-                    <Picker.Item label="Entre 35 y 44 años" value="Entre 35 y 44 años"/>
-                    <Picker.Item label="Más de 45 años" value="Más de 45 años"/>
-                </Picker>
+                <Text style={styles.text}>Responda las siguientes preguntas una vez por semana y en el transcurso de 2 dias aproximadamente le llegará un informe personalizado a su correo electrónico.</Text>
+                <Text style={styles.text}>1. Correo electrónico:</Text>
+                    <TextInput style={{marginVertical: '2%'}} placeholder="Ingrese el correo electrónico" onChangeText={(value) => EstablecerTexto('primera', value)}></TextInput>
             </View>
             <View style={styles.questions}>
-                <Text style={styles.text}>2. Genero:</Text>
+                <Text style={styles.text}>2. ¿Durante esta semana cuántas veces al día utilizó Pomodoro Time?</Text>
                 <Picker onValueChange={(value) => EstablecerTexto('segunda', value)} selectedValue={state.segunda}>
                     <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Masculino" value="Masculino"/>
-                    <Picker.Item label="Femenino" value="Femenino"/>
+                    <Picker.Item label="No la utilice durante esta semana" value="No la utilice durante esta semana"/>
+                    <Picker.Item label="Una vez" value="Una vez"/>
+                    <Picker.Item label="Entre 2 y 5 veces" value="Entre 2 y 5 veces"/>
+                    <Picker.Item label="Entre 6 y 10 veces" value="Entre 6 y 10 veces"/>
+                    <Picker.Item label="Más de 10 veces" value="Más de 10 veces"/>
                 </Picker>
             </View>
             <View style={styles.questions}>
-                <Text style={styles.text}>3. ¿Qué semestre cursa actualmente?</Text>
+                <Text style={styles.text}>3. ¿Durante esta semana cuánto duró en culminar una actividad aproximadamente?</Text>
                 <Picker onValueChange={(value) => EstablecerTexto('tercera', value)} selectedValue={state.tercera}>
                     <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Entre primero y tercero" value="Entre primero y tercero"/>
-                    <Picker.Item label="Entre cuarto y sexto" value="Entre cuarto y sexto"/>
-                    <Picker.Item label="Entre séptimo y noveno" value="Entre séptimo y noveno"/>
+                    <Picker.Item label="Entre 20 y 30 minutos" value="Entre 20 y 30 minutos"/>
+                    <Picker.Item label="Entre 40 y 60 minutos" value="Entre 40 y 60 minutos"/>
+                    <Picker.Item label="Entre 1 y 2 horas" value="Entre una hora y dos horas"/>
+                    <Picker.Item label="Más de 2 horas" value="Más de 2 horas"/>
                 </Picker>
             </View>
             <View style={styles.questions}>
-                <Text style={styles.text}>4. ¿Dispone actualmente de un dispositivo móvil?</Text>
+                <Text style={styles.text}>4. ¿Cuántas veces a la semana utilizo Pomodoro Time aproximadamente?</Text>
                 <Picker onValueChange={(value) => EstablecerTexto('cuarta', value)} selectedValue={state.cuarta}>
                     <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Si" value="Si"/>
-                    <Picker.Item label="No" value="No"/>
+                    <Picker.Item label="No la utilice durante esta semana" value="No la utilice durante esta semana"/>
+                    <Picker.Item label="Entre 1 y 5 veces" value="Entre 1 y 5 veces"/>
+                    <Picker.Item label="Entre 6 y 10 veces" value="Entre 6 y 10 veces"/>
+                    <Picker.Item label="Entre 10 y 20 veces" value="Entre 10 y 20 veces"/>
+                    <Picker.Item label="Más de 20 veces" value="Más de 20 veces"/>
                 </Picker>
             </View>
             <View style={styles.questions}>
-                <Text style={styles.text}>5. ¿Ha utilizado con anterioridad aplicaciones de gestión de tiempo?</Text>
+                <Text style={styles.text}>5. ¿En esta semana qué prefirió al momento de la realización de una actividad?</Text>
                 <Picker onValueChange={(value) => EstablecerTexto('quinta', value)} selectedValue={state.quinta}>
                     <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Si" value="Si"/>
-                    <Picker.Item label="No" value="No"/>
+                    <Picker.Item label="Silencio para concentración total" value="Silencio para concentración total"/>
+                    <Picker.Item label="Música relajante" value="Música relajante"/>
+                    <Picker.Item label="Música LOFI" value="Musica tipo LOFI"/>
+                    <Picker.Item label="Música sin Copyright (NCS)" value="Música sin Copyright (NCS)"/>
+                    <Picker.Item label="Otro tipo de música" value="Otro tipo de música"/>
                 </Picker>
             </View>
             <View style={styles.questions}>
-                <Text style={styles.text}>6. ¿Considera necesario una planeación y una organización al momento de realizar una actividad?</Text>
+                <Text style={styles.text}>6. ¿Qué recomendación fue la que le resulto más interesante durante el transcurso de la semana?</Text>
                 <Picker onValueChange={(value) => EstablecerTexto('sexta', value)} selectedValue={state.sexta}>
                     <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Si" value="Si"/>
-                    <Picker.Item label="No" value="No"/>
+                    <Picker.Item label="Recomendación músical" value="Recomendación músical"/>
+                    <Picker.Item label="Información actual (Noticias)" value="Información actual (Noticias)"/>
+                    <Picker.Item label="Recomendación deportiva (Ejercicios)" value="Recomendación deportiva (Ejercicios)"/>
+                    <Picker.Item label="Recomendación de frases" value="Recomendación de frases"/>
+                    <Picker.Item label="Ninguna me llamó la atención" value="Ninguna me llamó la atención"/>
                 </Picker>
             </View>
             <View style={styles.questions}>
-                <Text style={styles.text}>7. ¿Ha oído hablar de la técnica de trabajo Pomodoro?</Text>
+                <Text style={styles.text}>7. ¿Considera que durante la realización de las actividades fue más productivo gracias a la utilización de Pomodoro Time?</Text>
                 <Picker onValueChange={(value) => EstablecerTexto('septima', value)} selectedValue={state.septima}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Si" value="Si"/>
-                    <Picker.Item label="No" value="No"/>
-                </Picker>
-            </View>
-            <View style={styles.questions}>
-                <Text style={styles.text}>8. ¿Consideraría necesaria la creación de una aplicación móvil que permitiera gestionar su tiempo?</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('octava', value)} selectedValue={state.octava}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Si" value="Si"/>
-                    <Picker.Item label="No" value="No"/>
-                </Picker>
-            </View>
-            <View style={styles.questions}>
-                <Text style={styles.text}>9. ¿Cree usted que las pausas activas estimulan el aprendizaje?</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('novena', value)} selectedValue={state.novena}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Si" value="Si"/>
-                    <Picker.Item label="No" value="No"/>
-                </Picker>
-            </View>
-            <View style={styles.questions}>
-                <Text style={styles.text}>10. ¿Estaría a favor de la implementación de un gestor de tiempo con pausas activas de 5 minutos cada 25 minutos de clase?</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('decima', value)} selectedValue={state.decima}>
                     <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
                     <Picker.Item label="Si" value="Si"/>
                     <Picker.Item label="No" value="No"/>
