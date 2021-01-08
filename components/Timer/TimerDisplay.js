@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
-import {Icon} from 'react-native-elements'
+import { StyleSheet, Text, View } from 'react-native';
 
 class TimerDisplay extends React.Component {
 
