@@ -21,6 +21,11 @@ export default function hometodoindividual({navigation}) {
       return;
     }
 
+    if (newTask.length >= 20) {
+      Alert.alert("Atención", "La actividad ingresada contiene muchos caracteres.");
+      return;
+    }
+
     setTask([...task, newTask]);
     setNewTask("");
 

@@ -32,17 +32,14 @@ export default class login extends React.Component{
         })
         .catch(() => {
             this.setState({error:'Autenticación fallida', loading:false});
-            if(password.length<5){
-              Alert.alert('La contraseña debe de tener minimo 5 carácteres')
-            }
-            if(email.length<8){
-              Alert.alert('Ingresa un correo electrónico válido.')
-            }
             if(email === ''){
               Alert.alert('Debes de digitar un correo.')
               }
               if(password === ''){
               Alert.alert('Debes de digitar una contraseña.')
+              }
+              if(password.length<5){
+                Alert.alert('La contraseña debe de tener minimo 5 carácteres')
               }
         })
         }

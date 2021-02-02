@@ -21,6 +21,11 @@ export default function hometodoparejas({navigation}) {
       return;
     }
 
+    if (newTaskParejas.length >= 20) {
+      Alert.alert("Atención", "La actividad ingresada contiene muchos caracteres.");
+      return;
+    }
+
     setTaskParejas([...taskparejas, newTaskParejas]);
     setNewTaskParejas("");
 

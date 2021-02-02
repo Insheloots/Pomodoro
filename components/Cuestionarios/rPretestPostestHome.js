@@ -73,6 +73,13 @@ export default function rPretestPostestHome({navigation}) {
                 </TouchableOpacity>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={() => navigation.navigate('Consejo')}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Acerca de la aplicación</Text>
+                </View>
+                </TouchableOpacity>
+            </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={Confirmacion}>
                 <View style={styles.btnView}>
                     <Text style={styles.buttonText}>Cerrar sesión</Text>

@@ -21,6 +21,11 @@ export default function hometodogrupal({navigation}) {
       return;
     }
 
+    if (newTaskGrupal.length >= 20) {
+      Alert.alert("Atención", "La actividad ingresada contiene muchos caracteres.");
+      return;
+    }
+
     setTaskGrupal([...taskgrupal, newTaskGrupal]);
     setNewTaskGrupal("");
 

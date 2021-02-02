@@ -1,196 +1,102 @@
-import React, { useState, useEffect } from "react";
-import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import React from 'react'
+import {View, ScrollView, StyleSheet, Text, TouchableOpacity} from 'react-native'
+import 'firebase/firestore'
+import {Icon} from 'react-native-elements'
 
-import {
-  Keyboard,
-  Alert,
-  KeyboardAvoidingView,
-  Platform,
-  AsyncStorage
-} from "react-native";
-
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  FlatList
-} from "react-native";
-
-export default function hometodo({navigation}) {
-  const [task, setTask] = useState([]);
-  const [newTask, setNewTask] = useState("");
-
-  async function addTask() {
-    const search = task.filter(task => task === newTask);
-
-    if (search.length !== 0) {
-      Alert.alert("Atención", "Has repetido el nombre de la tarea.");
-      return;
-    }
-
-    setTask([...task, newTask]);
-    setNewTask("");
-
-    Keyboard.dismiss();
-  }
-
-  async function removeTask(item) {
-    Alert.alert(
-      "Eliminar actividad",
-      "¿Estás seguro que quieres borrarla?",
-      [
-        {
-          text: "Cancelar",
-          onPress: () => {
-            return;
-          },
-          style: "cancel"
-        },
-        {
-          text: "Aceptar",
-          onPress: () => setTask(task.filter(tasks => tasks !== item))
-        }
-      ],
-      { cancelable: false }
-    );
-  }
-
-  useEffect(() => {
-    async function loadTask() {
-      const task = await AsyncStorage.getItem("task");
-
-      if (task) {
-        setTask(JSON.parse(task));
-      }
-    }
-    loadTask();
-  }, []);
-
-  useEffect(() => {
-    async function saveTask() {
-      AsyncStorage.setItem("task", JSON.stringify(task));
-    }
-    saveTask();
-  }, [task]);
-
-  return (
-    <>
-      <KeyboardAvoidingView
-        keyboardVerticalOffset={0}
-        behavior="padding"
-        style={{ flex: 1 }}
-        enabled={Platform.OS === "ios"}
-      >
+export default function rHome({navigation}) {
+    return (
+        <ScrollView>
         <View style={styles.container}>
-          <View style={styles.Body}>
-            <FlatList
-              data={task}
-              keyExtractor={item => item.toString()}
-              showsVerticalScrollIndicator={false}
-              style={styles.FlatList}
-              renderItem={({ item }) => (
-                <View style={styles.ContainerView}>
-                  <Text style={styles.Texto}>{item}</Text>
-                  <TouchableOpacity onPress={() => removeTask(item)}>
-                    <MaterialIcons
-                      name="delete-forever"
-                      size={25}
-                      color="#f64c75"
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity onPress={() => navigation.navigate('Temporizador Pomodoro')}>
-                     <Ionicons name="md-time" size={25} color="#f64c75" />
-                  </TouchableOpacity>
-                  
-                </View>
-                
-              )}
-            />
-          </View>
-
-          <View style={styles.Form}>
-            <TextInput
-              style={styles.Input}
-              placeholderTextColor="#999"
-              autoCorrect={true}
-              value={newTask}
-              placeholder="Escribe una actividad"
-              maxLength={200}
-              onChangeText={text => setNewTask(text)}
-            />
-            <TouchableOpacity style={styles.Button} onPress={() => addTask()}>
-              <Ionicons name="ios-add" size={20} color="white" />
-            </TouchableOpacity>
-          </View>
+        <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('ToDoList')}>
+            <View style={styles.buttonContainer}>
+                <Icon name='sticky-note-o' color='#135D81' type='font-awesome'/>
+            </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('RHome')}>
+            <View style={styles.buttonContainer}>
+                <Icon name='lightbulb-o' color='#3491cd' type='font-awesome'/>
+            </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('Music')}>
+            <View style={styles.buttonContainer}>
+                <Icon name='music' color='#3491cd' type='font-awesome'/>
+            </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('PretestPostestHome')}>
+            <View style={styles.buttonContainer}>
+                <Icon name='bars' color='#3491cd' type='font-awesome'/>
+            </View>
+        </TouchableOpacity>
         </View>
-      </KeyboardAvoidingView>
-    </>
-  );
+            <View style={styles.center}>
+                <Text style={styles.text}>Seleccione el tipo de actividad que desea realizar:</Text>
+            </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={() => navigation.navigate('hometodoindividual')}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Actividad individual</Text>
+                </View>
+                </TouchableOpacity>
+            </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={() => navigation.navigate('hometodoparejas')}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Actividad en pareja</Text>
+                </View>
+                </TouchableOpacity>
+            </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={() => navigation.navigate('hometodogrupal')}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Actividad grupal</Text>
+                </View>
+                </TouchableOpacity>
+            </View>
+        </ScrollView>
+    )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-    marginTop: 20,
-    backgroundColor: "#FFF"
-  },
-  Body: {
-    flex: 1
-  },
-  Form: {
-    padding: 0,
-    height: 60,
-    justifyContent: "center",
-    alignSelf: "stretch",
-    flexDirection: "row",
-    paddingTop: 13,
-    borderTopWidth: 1,
-    borderColor: "#eee"
-  },
-  Input: {
-    flex: 1,
-    height: 40,
-    backgroundColor: "#eee",
-    borderRadius: 4,
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    borderWidth: 1,
-    borderColor: "#eee"
-  },
-  Button: {
-    height: 40,
-    width: 40,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#1c6cce",
-    borderRadius: 4,
-    marginLeft: 10
-  },
-  FlatList: {
-    flex: 1,
-    marginTop: 5
-  },
-  Texto: {
-    fontSize: 14,
-    color: "#333",
-    fontWeight: "bold",
-    marginTop: 4,
-    textAlign: "left",
-    marginRight: '20%',
-  },
-  ContainerView: {
-    marginBottom: 15,
-    padding: 15,
-    borderRadius: 4,
-    backgroundColor: "#eee",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    borderWidth: 1,
-    borderColor: "#eee"
-  },
+    center: {
+        flex: 1,
+        width: '80%',
+        paddingTop: '10%',
+        marginHorizontal: '4%'
+    },
+    questions: {
+        flex: 1,
+        width: '80%',
+        marginHorizontal: '4%',
+        paddingTop: '2%',
+    },
+    text: {
+        fontSize: 14,
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 14,
+        textAlign: 'center',
+    },
+    buttonContainer: {
+        flex: 1,
+        marginHorizontal: '7%',
+
+    },
+    container: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    buttonContainer: {
+        flex: 1,
+        marginHorizontal: '10%',
+    },
+    btnView:{
+        borderRadius: 8,
+        paddingVertical: 10,
+        marginTop: 15,
+        paddingHorizontal: 10,
+        backgroundColor: '#3491cd'
+    }
 });
