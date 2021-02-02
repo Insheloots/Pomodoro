@@ -101,11 +101,6 @@ export default function Navigator(){
                 options={{ headerShown: false }}
             />
             <Stack.Screen
-                name = 'Inicio de Sesion'
-                component = {LoginScreen}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen
                 name = 'Registro'
                 component = {RegisterScreen}
                 options={{ headerShown: false }}
