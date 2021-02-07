@@ -30,6 +30,11 @@ export default function Navigator(){
                 options={{ headerShown: false }}
             />
             <Stack.Screen
+                name= 'Temporizador Pomodoro'
+                component={Timer}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
                 name = 'ToDoList'
                 component = {ToDo}
                 options={{ headerShown: false }}
@@ -108,11 +113,6 @@ export default function Navigator(){
             <Stack.Screen
                 name= 'Consejo'
                 component={Tip}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen
-                name= 'Temporizador Pomodoro'
-                component={Timer}
                 options={{ headerShown: false }}
             />
         </Stack.Navigator>

@@ -64,7 +64,6 @@ class Timer extends React.Component {
 		this.setState({
 			running: true
 		})
-		start();
 		this.timerId = setInterval(() =>{
 			this.setState({
 				time: this.state.time - 1
