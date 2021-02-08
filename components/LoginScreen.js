@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, Image, TextInput, Alert, TouchableOpacity, ScrollView} from 'react-native'
+import {Text, View, StyleSheet, TextInput, Alert, TouchableOpacity} from 'react-native'
 import React, {Component} from 'react'
 import * as firebase from 'firebase'
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
@@ -32,12 +32,53 @@ export default class login extends React.Component{
         })
         .catch(() => {
             this.setState({error:'Autenticación fallida', loading:false});
-              Alert.alert('El correo o la contraseña que ingreso no estan correctos.')
-            if(email === ''){
-              Alert.alert('Debes de digitar un correo.')
+            if(email === '' && password === ''){
+              Alert.alert(
+                '⚠️ Campos vacios',
+                'Ingrese correo electrónico y contraseña.',
+                [
+                  {text: 'Volver a intentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                  {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
+              )
             }
-            if(password === ''){
-              Alert.alert('Debes de digitar una contraseña.')
+            else if(email === ''){
+              Alert.alert(
+                '⚠️ Correo electrónico',
+                'El correo electrónico que ingresaste no coincide con ninguna cuenta.',
+                [
+                  {text: 'Volver a intentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                  {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
+              )
+            }
+            else if(password === ''){
+              Alert.alert(
+                '⚠️ Contraseña',
+                'La contraseña que ingresaste no coincide con ninguna cuenta.',
+                [
+                  {text: 'Volver a intentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                  {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
+              )
+            }
+            else{
+            Alert.alert(
+              '⚠️ Datos invalidos',
+              'Los datos que ingresaste no coinciden con ninguna cuenta.',
+              [
+                {text: 'Volver a intentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+            )
             }
         })
     }
@@ -46,9 +87,6 @@ export default class login extends React.Component{
         }
 
         renderButtonOrLoading(){
-            if(this.state.loading){
-                return <Text> Cargando </Text>
-            }
             return <View>
                 <TouchableOpacity style={styles.login} onPress={this.onLoginPress.bind(this)}>
                   <Text style={styles.textLogin}>Iniciar sesión</Text>
