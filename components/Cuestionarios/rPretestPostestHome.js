@@ -16,28 +16,6 @@ export default function rPretestPostestHome({navigation}) {
     }
     return (
         <ScrollView>
-        <View style={styles.container}>
-        <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('ToDoList')}>
-            <View style={styles.buttonContainer}>
-                <Icon name='sticky-note-o' color='#3491cd' type='font-awesome'/>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('RHome')}>
-            <View style={styles.buttonContainer}>
-                <Icon name='lightbulb-o' color='#3491cd' type='font-awesome'/>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('Music')}>
-            <View style={styles.buttonContainer}>
-                <Icon name='music' color='#3491cd' type='font-awesome'/>
-            </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={{marginTop: '14%'}} onPress={() => navigation.navigate('PretestPostestHome')}>
-            <View style={styles.buttonContainer}>
-                <Icon name='bars' color='#135D81' type='font-awesome'/>
-            </View>
-        </TouchableOpacity>
-        </View>
             <View style={styles.center}>
                 <Text style={styles.text}>Seleccione que cuestionario desea realizar:</Text>
             </View>

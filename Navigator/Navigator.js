@@ -4,6 +4,7 @@ import LoginScreen from '../components/LoginScreen'
 import RegisterScreen from '../components/RegisterScreen'
 import Tip from '../components/tip'
 import ToDo from '../components/To Do List/hometodo'
+import MainHome from '../components/MainHome'
 import hometodoindividual from '../components/To Do List/hometodoindividual'
 import hometodoparejas from '../components/To Do List/hometodoparejas'
 import hometodogrupal from '../components/To Do List/hometodogrupal'
@@ -33,6 +34,11 @@ export default function Navigator(){
                 name= 'Temporizador Pomodoro'
                 component={Timer}
                 options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='MainHome'
+                component={MainHome}
+                options={{ headerShown: false}}
             />
             <Stack.Screen
                 name = 'ToDoList'

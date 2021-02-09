@@ -28,7 +28,7 @@ export default class login extends React.Component{
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then(() =>{
             this.setState({error:'',loading:false});
-            this.props.navigation.navigate('ToDoList');
+            this.props.navigation.navigate('MainHome');
         })
         .catch(() => {
             this.setState({error:'Autenticación fallida', loading:false});
@@ -37,7 +37,7 @@ export default class login extends React.Component{
                 '⚠️ Campos vacios',
                 'Ingrese correo electrónico y contraseña.',
                 [
-                  {text: 'Volver a intentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
                   {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
                   {text: 'OK', onPress: () => console.log('OK Pressed')},
                 ],
@@ -49,7 +49,7 @@ export default class login extends React.Component{
                 '⚠️ Correo electrónico',
                 'El correo electrónico que ingresaste no coincide con ninguna cuenta.',
                 [
-                  {text: 'Volver a intentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
                   {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
                   {text: 'OK', onPress: () => console.log('OK Pressed')},
                 ],
@@ -61,7 +61,7 @@ export default class login extends React.Component{
                 '⚠️ Contraseña',
                 'La contraseña que ingresaste no coincide con ninguna cuenta.',
                 [
-                  {text: 'Volver a intentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
                   {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
                   {text: 'OK', onPress: () => console.log('OK Pressed')},
                 ],
@@ -73,7 +73,7 @@ export default class login extends React.Component{
               '⚠️ Datos invalidos',
               'Los datos que ingresaste no coinciden con ninguna cuenta.',
               [
-                {text: 'Volver a intentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
                 {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
                 {text: 'OK', onPress: () => console.log('OK Pressed')},
               ],
