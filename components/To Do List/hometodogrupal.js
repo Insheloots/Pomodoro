@@ -11,18 +11,45 @@ export default function hometodogrupal({navigation}) {
   async function addTaskGrupal() {
     const search = taskgrupal.filter(taskgrupal => taskgrupal === newTaskGrupal);
 
-    if (search.length !== 0) {
-      Alert.alert("Atención", "Has repetido el nombre de la tarea.");
+    if(newTaskGrupal === ''){
+      Alert.alert(
+        '⚠️ Tarea en blanco',
+        'No es posible añadir una tarea en blanco.',
+        [
+          {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+          {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        { cancelable: false }
+      )
       return;
     }
 
-    if (newTaskGrupal === "") {
-      Alert.alert("Atención", "No puedes añadir una tarea en blanco.");
+    else if(search.length !== 0){
+      Alert.alert(
+        '⚠️ Tarea repetida',
+        'Has repetido el nombre de la tarea.',
+        [
+          {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+          {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        { cancelable: false }
+      )
       return;
     }
 
-    if (newTaskGrupal.length >= 20) {
-      Alert.alert("Atención", "La actividad ingresada contiene muchos caracteres.");
+    else if(newTaskGrupal.length >= 20){
+      Alert.alert(
+        '⚠️ Tamaño de la tarea',
+        'La actividad ingresada contiene muchos caracteres.',
+        [
+          {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+          {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        { cancelable: false }
+      )
       return;
     }
 
@@ -34,19 +61,19 @@ export default function hometodogrupal({navigation}) {
 
   async function removeTaskGrupal(item) {
     Alert.alert(
-      "Eliminar actividad",
-      "¿Estás seguro que quieres borrarla?",
+      "⚠️ Eliminar actividad",
+      "¿Estás seguro que deseas borrarla?",
       [
         {
-          text: "Cancelar",
+          text: "Cancel",
           onPress: () => {
             return;
           },
           style: "cancel"
         },
         {
-          text: "Aceptar",
-          onPress: () => setTaskGrupal(taskgrupal.filter(taskgrupal => taskgrupal !== item))
+          text: "OK",
+          onPress: () => setTask(task.filter(tasks => tasks !== item))
         }
       ],
       { cancelable: false }
@@ -117,25 +144,6 @@ export default function hometodogrupal({navigation}) {
             <TouchableOpacity style={styles.Button} onPress={() => addTaskGrupal()}>
               <Ionicons name="ios-add" size={20} color="white" />
             </TouchableOpacity>
-          </View>
-          <View style={styles.Form2}>
-          <View style={styles.container2}>
-            	<TouchableOpacity style={{marginTop: '2%'}} onPress={() => navigation.navigate('hometodoindividual')}>
-                	<View style={styles.buttonContainer}>
-                    	<Icon name='user' color='#3491cd' type='font-awesome'/>
-                	</View>
-            	</TouchableOpacity>
-            	<TouchableOpacity style={{marginTop: '2%'}} onPress={() => navigation.navigate('hometodoparejas')}>
-                	<View style={styles.buttonContainer}>
-                    	<Icon name='user-friends' color='#3491cd' type='font-awesome-5'/>
-                	</View>
-            	</TouchableOpacity>
-              <TouchableOpacity style={{marginTop: '2%'}} onPress={() => navigation.navigate('hometodogrupal')}>
-                	<View style={styles.buttonContainer}>
-                    	<Icon name='users' color='#135D81' type='font-awesome'/>
-                	</View>
-            	</TouchableOpacity>
-            </View>
           </View>
         </View>
       </KeyboardAvoidingView>

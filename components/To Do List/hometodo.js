@@ -7,26 +7,12 @@ export default function rHome({navigation}) {
     return (
         <ScrollView>
             <View style={styles.center}>
-                <Text style={styles.text}>Seleccione el tipo de actividad que desea realizar:</Text>
+                <Text style={styles.text}>Actividades:</Text>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
-                <TouchableOpacity onPress={() => navigation.navigate('hometodoindividual')}>
+                <TouchableOpacity onPress={() => navigation.navigate('MainActividad')}>
                 <View style={styles.btnView}>
-                    <Text style={styles.buttonText}>Actividad individual</Text>
-                </View>
-                </TouchableOpacity>
-            </View>
-            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
-                <TouchableOpacity onPress={() => navigation.navigate('hometodoparejas')}>
-                <View style={styles.btnView}>
-                    <Text style={styles.buttonText}>Actividad en pareja</Text>
-                </View>
-                </TouchableOpacity>
-            </View>
-            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
-                <TouchableOpacity onPress={() => navigation.navigate('hometodogrupal')}>
-                <View style={styles.btnView}>
-                    <Text style={styles.buttonText}>Actividad grupal</Text>
+                    <Text style={styles.buttonText}>Crear actividad</Text>
                 </View>
                 </TouchableOpacity>
             </View>

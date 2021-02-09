@@ -32,14 +32,53 @@ export default class login extends React.Component{
         })
         .catch(() => {
             this.setState({error:'Autenticación fallida', loading:false});
-            if(email === ''){
-              Alert.alert('Debes de digitar un correo.')
-              }
-              if(password === ''){
-              Alert.alert('Debes de digitar una contraseña.')
-              }
-              if(password.length<5){
-                Alert.alert('La contraseña debe de tener minimo 5 carácteres')
+            if(email === '' && password === ''){
+              Alert.alert(
+                '⚠️ Campos vacios',
+                'Ingrese correo electrónico y contraseña.',
+                [
+                  {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                  {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
+              )
+            }
+            else if(email === ''){
+              Alert.alert(
+                '⚠️ Correo electrónico',
+                'Recuerda ingresar un correo electrónico',
+                [
+                  {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                  {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
+              )
+            }
+            else if(password === ''){
+              Alert.alert(
+                '⚠️ Contraseña',
+                'Recuerda ingresar una contraseña.',
+                [
+                  {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                  {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
+              )
+            }
+            else{
+              Alert.alert(
+                '⚠️ Datos invalidos',
+                'El correo electrónico o la contraseña no son válidos.',
+                [
+                  {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                  {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
+              )
               }
         })
         }

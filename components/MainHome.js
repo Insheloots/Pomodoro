@@ -51,10 +51,10 @@ const MainTabScreen = () => (
         }}
       />
       <Tab.Screen
-        name="Pretest"
+        name="PretestPostestHome"
         component={PretestPostestHome}
         options={{
-          tabBarLabel: 'Pretest',
+          tabBarLabel: 'Cuestionarios',
           tabBarColor: '#1f65ff',
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-aperture" color={color} size={25} />

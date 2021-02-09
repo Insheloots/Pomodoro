@@ -5,6 +5,7 @@ import RegisterScreen from '../components/RegisterScreen'
 import Tip from '../components/tip'
 import ToDo from '../components/To Do List/hometodo'
 import MainHome from '../components/MainHome'
+import MainActividad from '../components/MainActividad'
 import hometodoindividual from '../components/To Do List/hometodoindividual'
 import hometodoparejas from '../components/To Do List/hometodoparejas'
 import hometodogrupal from '../components/To Do List/hometodogrupal'
@@ -31,14 +32,19 @@ export default function Navigator(){
                 options={{ headerShown: false }}
             />
             <Stack.Screen
-                name= 'Temporizador Pomodoro'
-                component={Timer}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen
                 name='MainHome'
                 component={MainHome}
                 options={{ headerShown: false}}
+            />
+            <Stack.Screen
+                name='MainActividad'
+                component={MainActividad}
+                options={{ headerShown: false}}
+            />
+            <Stack.Screen
+                name= 'Temporizador Pomodoro'
+                component={Timer}
+                options={{ headerShown: false }}
             />
             <Stack.Screen
                 name = 'ToDoList'
@@ -80,7 +86,6 @@ export default function Navigator(){
                 component = {Music}
                 options={{ headerShown: false }}
             />
-            
             <Stack.Screen
                 name = 'RCancion'
                 component = {RCancion}

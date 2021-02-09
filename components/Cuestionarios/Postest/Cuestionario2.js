@@ -18,7 +18,7 @@ if (!firebase.apps.length){
 }
 const db = firebase.firestore();
 
-export default function Cuestionario({navigation}) {
+export default function Cuestionario2({navigation}) {
     
     const [state, setState] = useState({
         primera: "",

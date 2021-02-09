@@ -11,18 +11,45 @@ export default function hometodoindividual({navigation}) {
   async function addTask() {
     const search = task.filter(task => task === newTask);
 
-    if (search.length !== 0) {
-      Alert.alert("Atención", "Has repetido el nombre de la tarea.");
+    if(newTask === ''){
+      Alert.alert(
+        '⚠️ Tarea en blanco',
+        'No es posible añadir una tarea en blanco.',
+        [
+          {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+          {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        { cancelable: false }
+      )
       return;
     }
 
-    if (newTask === "") {
-      Alert.alert("Atención", "No puedes añadir una tarea en blanco.");
+    else if(search.length !== 0){
+      Alert.alert(
+        '⚠️ Tarea repetida',
+        'Has repetido el nombre de la tarea.',
+        [
+          {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+          {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        { cancelable: false }
+      )
       return;
     }
 
-    if (newTask.length >= 20) {
-      Alert.alert("Atención", "La actividad ingresada contiene muchos caracteres.");
+    else if(newTask.length >= 20){
+      Alert.alert(
+        '⚠️ Tamaño de la tarea',
+        'La actividad ingresada contiene muchos caracteres.',
+        [
+          {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+          {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        { cancelable: false }
+      )
       return;
     }
 
@@ -34,18 +61,18 @@ export default function hometodoindividual({navigation}) {
 
   async function removeTask(item) {
     Alert.alert(
-      "Eliminar actividad",
-      "¿Estás seguro que quieres borrarla?",
+      "⚠️ Eliminar actividad",
+      "¿Estás seguro que deseas borrarla?",
       [
         {
-          text: "Cancelar",
+          text: "Cancel",
           onPress: () => {
             return;
           },
           style: "cancel"
         },
         {
-          text: "Aceptar",
+          text: "OK",
           onPress: () => setTask(task.filter(tasks => tasks !== item))
         }
       ],
@@ -117,25 +144,6 @@ export default function hometodoindividual({navigation}) {
             <TouchableOpacity style={styles.Button} onPress={() => addTask()}>
               <Ionicons name="ios-add" size={20} color="white" />
             </TouchableOpacity>
-          </View>
-          <View style={styles.Form2}>
-          <View style={styles.container2}>
-            	<TouchableOpacity style={{marginTop: '2%'}} onPress={() => navigation.navigate('hometodoindividual')}>
-                	<View style={styles.buttonContainer}>
-                    	<Icon name='user' color='#135D81' type='font-awesome'/>
-                	</View>
-            	</TouchableOpacity>
-            	<TouchableOpacity style={{marginTop: '2%'}} onPress={() => navigation.navigate('hometodoparejas')}>
-                	<View style={styles.buttonContainer}>
-                    	<Icon name='user-friends' color='#3491cd' type='font-awesome-5'/>
-                	</View>
-            	</TouchableOpacity>
-              <TouchableOpacity style={{marginTop: '2%'}} onPress={() => navigation.navigate('hometodogrupal')}>
-                	<View style={styles.buttonContainer}>
-                    	<Icon name='users' color='#3491cd' type='font-awesome'/>
-                	</View>
-            	</TouchableOpacity>
-            </View>
           </View>
         </View>
       </KeyboardAvoidingView>
