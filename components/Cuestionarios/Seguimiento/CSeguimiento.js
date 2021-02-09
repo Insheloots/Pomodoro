@@ -44,8 +44,120 @@ export default function CSeguimiento({navigation}) {
             sexta: state.sexta,
             septima: state.septima,
         })
-        Alert.alert('Se ha enviado el cuestionario correctamente.')
-        navigation.navigate('PretestPostestHome')
+        Alert.alert(
+            '✅ Proceso exitoso',
+            'Ha realizado el cuestionario correctamente.',
+        )
+    }
+
+    const Confirmacion = () => {
+        if(state.primera === '' && state.segunda === '' && state.tercera === '' && state.cuarta === '' && state.quinta === '' && state.sexta === '' && state.septima === ''){
+            Alert.alert(
+              '⚠️ Campos vacios',
+              'Debe de llenar todos los campos.',
+              [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+            )
+        }
+        
+        else if(state.primera === ''){
+              Alert.alert(
+                '⚠️ Campos vacios',
+                'Debe de llenar todos los campos.',
+                [
+                  {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                  {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
+            )
+        }
+
+        else if(state.segunda === ''){
+            Alert.alert(
+              '⚠️ Campos vacios',
+              'Debe de llenar todos los campos.',
+              [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+          )
+      }
+
+        else if(state.tercera === ''){
+              Alert.alert(
+                '⚠️ Campos vacios',
+                'Debe de llenar todos los campos.',
+                [
+                  {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                  {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                  {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
+            )
+        }
+
+        else if(state.cuarta === ''){
+            Alert.alert(
+              '⚠️ Campos vacios',
+              'Debe de llenar todos los campos.',
+              [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+          )
+      }
+
+        else if(state.quinta === ''){
+            Alert.alert(
+            '⚠️ Campos vacios',
+            'Debe de llenar todos los campos.',
+            [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            { cancelable: false }
+        )
+    }
+
+        else if(state.sexta === ''){
+            Alert.alert(
+            '⚠️ Campos vacios',
+            'Debe de llenar todos los campos.',
+            [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            { cancelable: false }
+        )
+    }
+    
+        else if(state.septima === ''){
+            Alert.alert(
+            '⚠️ Campos vacios',
+            'Debe de llenar todos los campos.',
+            [
+                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            { cancelable: false }
+        )
+    }
+
+        else{
+            crearRespuesta();
+        }
     }
 
     return (
@@ -118,7 +230,7 @@ export default function CSeguimiento({navigation}) {
                 </Picker>
             </View>
             <View style={{marginVertical: '5%', marginHorizontal: '8%'}}>
-                    <TouchableOpacity onPress={() => crearRespuesta()}>
+                    <TouchableOpacity onPress={() => Confirmacion()}>
                     <View style={styles.btnView}>
                     <Text style={styles.buttonText}>Enviar</Text>
                     </View>
