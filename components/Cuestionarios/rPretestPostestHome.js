@@ -9,9 +9,9 @@ const Contactanos = () => {
 
 export default function rPretestPostestHome({navigation}) {
     const Confirmacion = () => {
-        Alert.alert('Cerrar sesión', '¿Estás seguro que quieres cerrar sesión?', [
-            {text: 'Cancelar', onPress: console.log(false)},
-            {text: 'Aceptar', onPress: () => navigation.navigate('Inicio de Sesion')},
+        Alert.alert('⚠️ Cerrar sesión', '¿Estás seguro que quieres cerrar sesión?', [
+            {text: 'Cancel', onPress: console.log(false)},
+            {text: 'OK', onPress: () => navigation.navigate('Inicio de Sesion')},
         ])
     }
     return (
