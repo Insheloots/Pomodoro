@@ -1,66 +1,93 @@
-import React from 'react'
-import {View, ScrollView, StyleSheet, Text, TouchableOpacity} from 'react-native'
-import 'firebase/firestore'
-import {Icon} from 'react-native-elements'
+import React from "react";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import "firebase/firestore";
+import { AppLoading } from "expo";
+import {
+    useFonts,
+    OpenSans_400Regular,
+    OpenSans_600SemiBold,
+    OpenSans_700Bold,
+    OpenSans_800ExtraBold,
+} from "@expo-google-fonts/open-sans";
+import {
+    Montserrat_300Light,
+    Montserrat_400Regular,
+    Montserrat_500Medium,
+    Montserrat_700Bold,
+    Montserrat_800ExtraBold,
+} from "@expo-google-fonts/montserrat";
+import { Icon } from "react-native-elements";
 
-export default function rHome({navigation}) {
+export default function rHome({ navigation }) {
+    let [fontsLoaded, error] = useFonts({
+        regularO: OpenSans_400Regular,
+        semiBoldO: OpenSans_600SemiBold,
+        boldO: OpenSans_700Bold,
+        lightM: Montserrat_300Light,
+        regularM: Montserrat_400Regular,
+        mediumM: Montserrat_500Medium,
+        boldM: Montserrat_700Bold,
+        extraBoldM: Montserrat_800ExtraBold,
+    });
+
+    if (!fontsLoaded) {
+        return <AppLoading />;
+    }
+
     return (
-        <ScrollView>
-            <View style={styles.center}>
-                <Text style={styles.text}>Actividades:</Text>
+        <View style={styles.container}>
+            <View style={styles.top}>
+                <Text style={styles.text}>Gestión y control de actividades</Text>
+                <Text style={styles.basetext}>
+                    Gestiona las actividades pendientes a través de Pomodoro time.
+                </Text>
             </View>
-            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
-                <TouchableOpacity onPress={() => navigation.navigate('MainActividad')}>
-                <View style={styles.btnView}>
-                    <Text style={styles.buttonText}>Crear actividad</Text>
-                </View>
+            <View style={styles.btn}>
+                <TouchableOpacity onPress={() => navigation.navigate("MainActividad")}>
+                    <View style={styles.btnView}>
+                        <Text style={styles.buttonText}>Crear actividad</Text>
+                    </View>
                 </TouchableOpacity>
             </View>
-        </ScrollView>
-    )
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
-    center: {
-        flex: 1,
-        width: '80%',
-        paddingTop: '10%',
-        marginHorizontal: '4%'
-    },
-    questions: {
-        flex: 1,
-        width: '80%',
-        marginHorizontal: '4%',
-        paddingTop: '2%',
-    },
-    text: {
-        fontSize: 14,
-    },
-    buttonText: {
-        color: 'white',
-        fontSize: 14,
-        textAlign: 'center',
-    },
-    buttonContainer: {
-        flex: 1,
-        marginHorizontal: '7%',
-
-    },
     container: {
         flex: 1,
+        marginTop: 30,
+        flexDirection: "column",
+        justifyContent: "center",
+    },
+    top: {
+        paddingHorizontal: 24,
+    },
+    text: {
+        fontFamily: "boldM",
+        fontSize: 30,
+    },
+    basetext: {
+        fontSize: 13,
+        fontFamily: "semiBoldO",
+        paddingBottom: 30,
+        paddingVertical: 5,
+    },
+    btn: {
         flexDirection: 'row',
-        alignItems: 'center',
         justifyContent: 'center',
     },
-    buttonContainer: {
-        flex: 1,
-        marginHorizontal: '10%',
+    buttonText: {
+        color: "white",
+        fontFamily: 'regularM',
+        fontSize: 14,
+        textAlign: "center",
     },
-    btnView:{
-        borderRadius: 8,
-        paddingVertical: 10,
+    btnView: {
+        borderRadius: 25,
+        paddingVertical: 12,
         marginTop: 15,
-        paddingHorizontal: 10,
-        backgroundColor: '#3491cd'
-    }
+        paddingHorizontal: 95,
+        backgroundColor: "#1f65ff",
+    },
 });
