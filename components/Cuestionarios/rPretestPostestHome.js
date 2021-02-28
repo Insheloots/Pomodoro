@@ -4,7 +4,7 @@ import 'firebase/firestore'
 import {Icon} from 'react-native-elements'
 
 const Contactanos = () => {
-    Linking.openURL('mailto: afmelo@ucundinamarca.edu.co, diegoalexanderdiaz@ucundinamarca.edu.co');
+    Linking.openURL('mailto: afmelo@ucundinamarca.edu.co, diegoalexanderdiaz@ucundinamarca.edu.co, aparenas@ucundinamarca.edu.co');
 };
 
 export default function rPretestPostestHome({navigation}) {

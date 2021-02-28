@@ -17,6 +17,7 @@ import PretestPostestHome from '../components/Cuestionarios/rPretestPostestHome'
 import RHome from '../components/Recomendaciones/rHome'
 import REjercicio from '../components/Recomendaciones/Actividades/rEjercicio'
 import RNoticia from '../components/Recomendaciones/Actividades/rNoticia'
+import RJuego from '../components/Recomendaciones/Actividades/rJuego'
 import RFrase from '../components/Recomendaciones/Actividades/rFrase'
 import RCancion from '../components/Recomendaciones/Actividades/rCancion'
 import Music from '../components/Music/music'
@@ -99,6 +100,11 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'RFrase'
                 component = {RFrase}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'RJuego'
+                component = {RJuego}
                 options={{ headerShown: false }}
             />
             <Stack.Screen

@@ -37,6 +37,13 @@ export default function rHome({navigation}) {
                 </View>
                 </TouchableOpacity>
             </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={() => navigation.navigate('RJuego')}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Recomendaciones de juegos</Text>
+                </View>
+                </TouchableOpacity>
+            </View>
         </ScrollView>
     )
 
