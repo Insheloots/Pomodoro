@@ -25,9 +25,6 @@ export default function CSeguimiento({navigation}) {
         segunda: "",
         tercera: "",
         cuarta: "",
-        quinta: "",
-        sexta: "",
-        septima: "",
     })
 
     const EstablecerTexto = (primera, value) => {
@@ -40,9 +37,6 @@ export default function CSeguimiento({navigation}) {
             segunda: state.segunda,
             tercera: state.tercera,
             cuarta: state.cuarta,
-            quinta: state.quinta,
-            sexta: state.sexta,
-            septima: state.septima,
         })
         Alert.alert(
             '✅ Proceso exitoso',
@@ -51,7 +45,7 @@ export default function CSeguimiento({navigation}) {
     }
 
     const Confirmacion = () => {
-        if(state.primera === '' && state.segunda === '' && state.tercera === '' && state.cuarta === '' && state.quinta === '' && state.sexta === '' && state.septima === ''){
+        if(state.primera === '' && state.segunda === '' && state.tercera === '' && state.cuarta === ''){
             Alert.alert(
               '⚠️ Campos vacios',
               'Debe de llenar todos los campos.',
@@ -116,45 +110,6 @@ export default function CSeguimiento({navigation}) {
           )
       }
 
-        else if(state.quinta === ''){
-            Alert.alert(
-            '⚠️ Campos vacios',
-            'Debe de llenar todos los campos.',
-            [
-                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
-                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-                {text: 'OK', onPress: () => console.log('OK Pressed')},
-            ],
-            { cancelable: false }
-        )
-    }
-
-        else if(state.sexta === ''){
-            Alert.alert(
-            '⚠️ Campos vacios',
-            'Debe de llenar todos los campos.',
-            [
-                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
-                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-                {text: 'OK', onPress: () => console.log('OK Pressed')},
-            ],
-            { cancelable: false }
-        )
-    }
-    
-        else if(state.septima === ''){
-            Alert.alert(
-            '⚠️ Campos vacios',
-            'Debe de llenar todos los campos.',
-            [
-                {text: 'Reintentar', onPress: () => console.log('Ask me later pressed')},
-                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-                {text: 'OK', onPress: () => console.log('OK Pressed')},
-            ],
-            { cancelable: false }
-        )
-    }
-
         else{
             crearRespuesta();
         }
@@ -197,36 +152,6 @@ export default function CSeguimiento({navigation}) {
                     <Picker.Item label="Entre 6 y 10 veces" value="Entre 6 y 10 veces"/>
                     <Picker.Item label="Entre 10 y 20 veces" value="Entre 10 y 20 veces"/>
                     <Picker.Item label="Más de 20 veces" value="Más de 20 veces"/>
-                </Picker>
-            </View>
-            <View style={styles.questions}>
-                <Text style={styles.text}>5. ¿En esta semana qué prefirió al momento de la realización de una actividad?</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('quinta', value)} selectedValue={state.quinta}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Silencio para concentración total" value="Silencio para concentración total"/>
-                    <Picker.Item label="Música relajante" value="Música relajante"/>
-                    <Picker.Item label="Música LOFI" value="Musica tipo LOFI"/>
-                    <Picker.Item label="Música sin Copyright (NCS)" value="Música sin Copyright (NCS)"/>
-                    <Picker.Item label="Otro tipo de música" value="Otro tipo de música"/>
-                </Picker>
-            </View>
-            <View style={styles.questions}>
-                <Text style={styles.text}>6. ¿Qué recomendación fue la que le resulto más interesante durante el transcurso de la semana?</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('sexta', value)} selectedValue={state.sexta}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Recomendación músical" value="Recomendación músical"/>
-                    <Picker.Item label="Información actual (Noticias)" value="Información actual (Noticias)"/>
-                    <Picker.Item label="Recomendación deportiva (Ejercicios)" value="Recomendación deportiva (Ejercicios)"/>
-                    <Picker.Item label="Recomendación de frases" value="Recomendación de frases"/>
-                    <Picker.Item label="Ninguna me llamó la atención" value="Ninguna me llamó la atención"/>
-                </Picker>
-            </View>
-            <View style={styles.questions}>
-                <Text style={styles.text}>7. ¿Considera que durante la realización de las actividades fue más productivo gracias a la utilización de Pomodoro Time?</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('septima', value)} selectedValue={state.septima}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Si" value="Si"/>
-                    <Picker.Item label="No" value="No"/>
                 </Picker>
             </View>
             <View style={{marginVertical: '5%', marginHorizontal: '8%'}}>

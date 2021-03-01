@@ -14,27 +14,49 @@ export default function rPretestPostestHome({navigation}) {
             {text: 'OK', onPress: () => navigation.navigate('Inicio de Sesion')},
         ])
     }
+    const TratamientoPretest = () => {
+        Alert.alert('⚠️ Requerimiento para el test', '¿Aceptas que la información digitada en el examen sea tratada posteriormente?', [
+            {text: 'Cancel', onPress: () => console.log('Ask me later pressed')},
+            {text: 'Rechazar', onPress: console.log(false)},
+            {text: 'Aceptar', onPress: () => navigation.navigate('Pretest')},
+        ])
+    }
+    const TratamientoPostest = () => {
+        Alert.alert('⚠️ Requerimiento para el test', '¿Aceptas que la información digitada en el cuestionario sea tratada posteriormente?', [
+            {text: 'Cancel', onPress: () => console.log('Ask me later pressed')},
+            {text: 'Rechazar', onPress: console.log(false)},
+            {text: 'Aceptar', onPress: () => navigation.navigate('Postest')},
+        ])
+    }
+    const TratamientoSeguimiento = () => {
+        Alert.alert('⚠️ Requerimiento para el test', '¿Aceptas que la información digitada en el examen sea tratada posteriormente?', [
+            {text: 'Cancel', onPress: () => console.log('Ask me later pressed')},
+            {text: 'Rechazar', onPress: console.log(false)},
+            {text: 'Aceptar', onPress: () => navigation.navigate('CSeguimiento')},
+        ])
+    }
+    
     return (
         <ScrollView>
             <View style={styles.center}>
                 <Text style={styles.text}>Seleccione que cuestionario desea realizar:</Text>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
-                <TouchableOpacity onPress={() => navigation.navigate('Pretest')}>
+                <TouchableOpacity onPress={TratamientoPretest}>
                 <View style={styles.btnView}>
                     <Text style={styles.buttonText}>Pretest</Text>
                 </View>
                 </TouchableOpacity>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
-                <TouchableOpacity onPress={() => navigation.navigate('Postest')}>
+                <TouchableOpacity onPress={TratamientoPostest}>
                 <View style={styles.btnView}>
                     <Text style={styles.buttonText}>Postest</Text>
                 </View>
                 </TouchableOpacity>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
-                <TouchableOpacity onPress={() => navigation.navigate('CSeguimiento')}>
+                <TouchableOpacity onPress={TratamientoSeguimiento}>
                 <View style={styles.btnView}>
                     <Text style={styles.buttonText}>Cuestionario de seguimiento</Text>
                 </View>

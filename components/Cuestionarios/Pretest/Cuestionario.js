@@ -229,9 +229,15 @@ export default function Cuestionario({navigation}) {
                 <Text style={styles.text}>3. ¿Qué semestre cursa actualmente?</Text>
                 <Picker onValueChange={(value) => EstablecerTexto('tercera', value)} selectedValue={state.tercera}>
                     <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Entre primero y tercero" value="Entre primero y tercero"/>
-                    <Picker.Item label="Entre cuarto y sexto" value="Entre cuarto y sexto"/>
-                    <Picker.Item label="Entre séptimo y noveno" value="Entre séptimo y noveno"/>
+                    <Picker.Item label="Primer semestre" value="Primer semestre"/>
+                    <Picker.Item label="Segundo semestre" value="Segundo semestre"/>
+                    <Picker.Item label="Tercer semestre" value="Tercer semestre"/>
+                    <Picker.Item label="Cuarto semestre" value="Cuarto semestre"/>
+                    <Picker.Item label="Quinto semestre" value="Quinto semestre"/>
+                    <Picker.Item label="Sexto semestre" value="Sexto semestre"/>
+                    <Picker.Item label="Septimo semestre" value="Septimo semestre"/>
+                    <Picker.Item label="Octavo semestre" value="Octavo semestre"/>
+                    <Picker.Item label="Noveno semestre" value="Noveno semestre"/>
                 </Picker>
             </View>
             <View style={styles.questions}>
