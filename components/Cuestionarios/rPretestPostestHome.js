@@ -15,21 +15,21 @@ export default function rPretestPostestHome({navigation}) {
         ])
     }
     const TratamientoPretest = () => {
-        Alert.alert('⚠️ Requerimiento para el test', '¿Aceptas que la información digitada en el examen sea tratada posteriormente?', [
+        Alert.alert('⚠️ Requerimiento para el test', 'Ley 1581 de 2012:\n\n¿Aceptas que la información digitada en el examen sea tratada posteriormente?', [
             {text: 'Cancel', onPress: () => console.log('Ask me later pressed')},
             {text: 'Rechazar', onPress: console.log(false)},
             {text: 'Aceptar', onPress: () => navigation.navigate('Pretest')},
         ])
     }
     const TratamientoPostest = () => {
-        Alert.alert('⚠️ Requerimiento para el test', '¿Aceptas que la información digitada en el cuestionario sea tratada posteriormente?', [
+        Alert.alert('⚠️ Requerimiento para el test', 'Ley 1581 de 2012:\n\n¿Aceptas que la información digitada en el cuestionario sea tratada posteriormente?', [
             {text: 'Cancel', onPress: () => console.log('Ask me later pressed')},
             {text: 'Rechazar', onPress: console.log(false)},
             {text: 'Aceptar', onPress: () => navigation.navigate('Postest')},
         ])
     }
     const TratamientoSeguimiento = () => {
-        Alert.alert('⚠️ Requerimiento para el test', '¿Aceptas que la información digitada en el examen sea tratada posteriormente?', [
+        Alert.alert('⚠️ Requerimiento para el cuestionario', 'Ley 1581 de 2012:\n\n¿Aceptas que la información digitada en el cuestionario sea tratada posteriormente?', [
             {text: 'Cancel', onPress: () => console.log('Ask me later pressed')},
             {text: 'Rechazar', onPress: console.log(false)},
             {text: 'Aceptar', onPress: () => navigation.navigate('CSeguimiento')},
