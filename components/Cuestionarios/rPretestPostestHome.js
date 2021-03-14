@@ -35,6 +35,12 @@ export default function rPretestPostestHome({navigation}) {
             {text: 'Aceptar', onPress: () => navigation.navigate('CSeguimiento')},
         ])
     }
+    const MasInformacion = () => {
+        Alert.alert('Más Información', 'Algunas cosas que debes de tener en cuenta son: \n\nA) Técnica de Trabajo Pomodoro:\n\nLa Técnica Pomodoro es un método para mejorar la administración del tiempo dedicado a una actividad. \n\nFue desarrollado por Francesco Cirillo a fines de la década de 1980. Se usa un temporizador para dividir el tiempo en intervalos indivisibles, llamados pomodoros, de 25 minutos de actividad, seguidos de 5 minutos de descanso, con pausas más largas cada cuatro pomodoros. \n\nB) Pretest: \n\nEl pretest es una prueba que se realiza antes de la primera puesta en marcha de la aplicación, y a través de la cual se determina información general de los participantes (edad, genero, semestre, y conocimiento previo de la técnica de trabajo Pomodoro). \n\nC) Postest: \n\nEl postest, a diferencia del pretest se realiza una vez que se hizo la primera puesta en marcha de la aplicación, y nos permite determinar el nivel de procrastinación presente en cada uno de los participantes. \n\nD) Cuestionario de seguimiento (Opcional): \n\nEs para aquellas personas que quieren recibir un informe detallado y con gráficas acerca del trabajo que se realizó en la semana, y que permite comparar con semanas anteriores la productividad presente en esta.', [
+            {text: 'Cancel', onPress: console.log(false)},
+            {text: 'OK', onPress: console.log(false)},
+        ])
+    }
     
     return (
         <ScrollView>
@@ -73,9 +79,9 @@ export default function rPretestPostestHome({navigation}) {
                 </TouchableOpacity>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
-                <TouchableOpacity onPress={() => navigation.navigate('Consejo')}>
+                <TouchableOpacity onPress={MasInformacion}>
                 <View style={styles.btnView}>
-                    <Text style={styles.buttonText}>Acerca de la aplicación</Text>
+                    <Text style={styles.buttonText}>Más información</Text>
                 </View>
                 </TouchableOpacity>
             </View>
