@@ -17,10 +17,6 @@ if (!firebase.apps.length){
     firebase.initializeApp(firebaseConfig);
 }
 
-const Confirmacion = () => {
-  
-}
-
 export default class login extends React.Component{
 
     constructor(props){
