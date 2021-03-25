@@ -111,7 +111,14 @@ export default function CSeguimiento({navigation}) {
       }
 
         else{
-            crearRespuesta();
+            Alert.alert('⚠️ Confirmación', 
+            'Ley 1581 de 2012:\n\nAl darle en el botón "Enviar" aceptas que la información digitada en el cuestionario sea tratada posteriormente', [
+                {text: 'Cancel', onPress: () => console.log('Ask me later pressed')},
+                {text: 'Rechazar', onPress: console.log(false)},
+                {text: 'Aceptar', onPress: () => crearRespuesta()
+            },
+            ])
+            
         }
     }
 
