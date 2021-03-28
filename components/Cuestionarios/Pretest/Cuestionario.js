@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {View, ScrollView, StyleSheet, Text, TouchableOpacity, Picker, Alert} from 'react-native'
+import {View, ScrollView, StyleSheet, Text, TouchableOpacity, Picker, Alert, Linking} from 'react-native'
 import * as firebase from 'firebase'
 import 'firebase/firestore'
 
@@ -202,8 +202,8 @@ export default function Cuestionario({navigation}) {
 
         else{
             Alert.alert('⚠️ Confirmación', 
-            'Ley 1581 de 2012:\n\nAl darle en el botón "Enviar" aceptas que la información digitada en el cuestionario sea tratada posteriormente', [
-                {text: 'Cancel', onPress: () => console.log('Ask me later pressed')},
+            'Ley 1581 de 2012:\n\nAl darle en el botón "Enviar" aceptas que la información digitada en el cuestionario puede ser tratada posteriormente', [
+                {text: 'Más info', onPress: () => Linking.openURL('https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981')},
                 {text: 'Rechazar', onPress: console.log(false)},
                 {text: 'Aceptar', onPress: () => crearRespuesta()
             },
