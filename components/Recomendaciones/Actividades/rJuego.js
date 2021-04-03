@@ -40,9 +40,8 @@ export default function rJuego({navigation}) {
     }, [])
 
     return(
-        <ScrollView>
+        <ScrollView style={styles.background}>
             <View style={styles.center}>
-                <Text style={styles.text}>Juegos:</Text>
                 </View>
                 {respuestas.map(respuesta =>{
                     const Juego = () => {
@@ -52,8 +51,8 @@ export default function rJuego({navigation}) {
                         <ListItem key={respuesta.id} bottomDivider onPress={Juego}> 
                             <ListItem.Chevron/>
                             <ListItem.Content>
-                                <ListItem.Title>{respuesta.titulojuego}:</ListItem.Title>
-                                <ListItem.Subtitle>{respuesta.desarrolladorjuego}</ListItem.Subtitle>
+                                <ListItem.Title>{respuesta.titulojuego}</ListItem.Title>
+                                <ListItem.Subtitle>Desarrolladora: {respuesta.desarrolladorjuego}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     );
@@ -64,11 +63,13 @@ export default function rJuego({navigation}) {
 }
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
-        width: '80%',
-        paddingTop: '10%',
-        marginHorizontal: '4%'
+        paddingTop: '1%',
+        backgroundColor: "white"
     },
     text: {
         fontSize: 14,

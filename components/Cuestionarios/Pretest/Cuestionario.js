@@ -214,6 +214,7 @@ export default function Cuestionario({navigation}) {
 
     return (
         <ScrollView>
+            <View style={styles.background}>
             <View style={styles.center}>
                 <Text style={styles.text}>1. ¿Qué edad tiene?</Text>
                 <Picker onValueChange={(value) => EstablecerTexto('primera', value)} selectedValue={state.primera}>
@@ -310,17 +311,21 @@ export default function Cuestionario({navigation}) {
                     </View>
                     </TouchableOpacity>
             </View>
+            </View>
         </ScrollView>
     )
 
 }
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
         width: '80%',
-        paddingTop: '10%',
-        marginHorizontal: '4%'
+        paddingTop: '6%',
+        marginHorizontal: '4%',
     },
     questions: {
         flex: 1,

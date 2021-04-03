@@ -25,7 +25,12 @@ const Stack = createStackNavigator()
 
 export default function Navigator(){
     return(
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{
+            headerStyle: {
+                backgroundColor: 'white',
+            },
+            }}
+          >
             <Stack.Screen
                 name = 'Inicio de Sesion'
                 component = {LoginScreen}
@@ -39,7 +44,7 @@ export default function Navigator(){
             <Stack.Screen
                 name='MainActividad'
                 component={MainActividad}
-                options={{ headerShown: false}}
+                options={{title: 'Actividades', headerTransparent: true}}
             />
             <Stack.Screen
                 name= 'Temporizador Pomodoro'
@@ -69,7 +74,7 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'CSeguimiento'
                 component = {CSeguimiento}
-                options={{ headerShown: false }}
+                options={{title: 'Cuestionario de Seguimiento'}}
             />
             <Stack.Screen
                 name = 'RHome'
@@ -89,37 +94,37 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'RCancion'
                 component = {RCancion}
-                options={{ headerShown: false }}
+                options={{title: 'Canciones'}}
             />
             <Stack.Screen
                 name = 'RNoticia'
                 component = {RNoticia}
-                options={{ headerShown: false }}
+                options={{title: 'Noticias'}}
             />
             <Stack.Screen
                 name = 'RFrase'
                 component = {RFrase}
-                options={{ headerShown: false }}
+                options={{title: 'Frases'}}
             />
             <Stack.Screen
                 name = 'RJuego'
                 component = {RJuego}
-                options={{ headerShown: false }}
+                options={{title: 'Juegos'}}
             />
             <Stack.Screen
                 name = 'REjercicio'
                 component = {REjercicio}
-                options={{ headerShown: false }}
+                options={{title: 'Ejercicios'}}
             />
             <Stack.Screen
                 name = 'Pretest'
                 component = {Pretest}
-                options={{ headerShown: false }}
+                options={{title: 'Cuestionario de Pretest'}}
             />
             <Stack.Screen
                 name = 'Postest'
                 component = {Postest}
-                options={{ headerShown: false }}
+                options={{title: 'Cuestionario de Postest'}}
             />
             <Stack.Screen
                 name = 'Registro'

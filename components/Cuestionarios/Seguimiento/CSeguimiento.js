@@ -124,6 +124,7 @@ export default function CSeguimiento({navigation}) {
 
     return (
         <ScrollView>
+            <View style={styles.background}>
             <View style={styles.center}>
                 <Text style={styles.text}>Responda las siguientes preguntas una vez por semana y en el transcurso de 2 dias aproximadamente le llegará un informe personalizado a su correo electrónico.</Text>
                 <Text style={styles.text}>1. Correo electrónico:</Text>
@@ -168,16 +169,20 @@ export default function CSeguimiento({navigation}) {
                     </View>
                     </TouchableOpacity>
             </View>
+            </View>
         </ScrollView>
     )
 
 }
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
         width: '80%',
-        paddingTop: '10%',
+        paddingTop: '6%',
         marginHorizontal: '4%'
     },
     questions: {

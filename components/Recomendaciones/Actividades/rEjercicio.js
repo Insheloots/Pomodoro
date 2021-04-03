@@ -38,16 +38,15 @@ export default function rEjercicio({navigation}) {
     }, [])
 
     return(
-        <ScrollView>
+        <ScrollView style={styles.background}>
             <View style={styles.center}>
-                <Text style={styles.text}>Recomendaciones de ejercicios:</Text>
                 </View>
                 {respuestas.map(respuesta =>{
                     return(
                         <ListItem key={respuesta.id} bottomDivider> 
                             <ListItem.Chevron/>
                             <ListItem.Content>
-                                <ListItem.Title>Ejercicio:</ListItem.Title>
+                                <ListItem.Title>Ejercicio</ListItem.Title>
                                 <ListItem.Subtitle>{respuesta.ejercicio}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
@@ -59,11 +58,13 @@ export default function rEjercicio({navigation}) {
 }
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
-        width: '80%',
-        paddingTop: '10%',
-        marginHorizontal: '4%'
+        paddingTop: '1%',
+        backgroundColor: "white"
     },
     text: {
         fontSize: 14,

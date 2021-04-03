@@ -15,7 +15,7 @@ export default function rPretestPostestHome({navigation}) {
         ])
     }
     const MasInformacion = () => {
-        Alert.alert('Más Información', 'Algunas cosas que debes de tener en cuenta son: \n\nA) Técnica de Trabajo Pomodoro:\n\nLa Técnica Pomodoro es un método para mejorar la administración del tiempo dedicado a una actividad. \n\nFue desarrollado por Francesco Cirillo a fines de la década de 1980. Se usa un temporizador para dividir el tiempo en intervalos indivisibles, llamados pomodoros, de 25 minutos de actividad, seguidos de 5 minutos de descanso, con pausas más largas cada cuatro pomodoros. \n\nB) Pretest: \n\nEl pretest es una prueba que se realiza antes de la primera puesta en marcha de la aplicación, y a través de la cual se determina información general de los participantes (edad, genero, semestre, y conocimiento previo de la técnica de trabajo Pomodoro). \n\nC) Postest: \n\nEl postest, a diferencia del pretest se realiza una vez que se hizo la primera puesta en marcha de la aplicación, y nos permite determinar el nivel de procrastinación presente en cada uno de los participantes. \n\nD) Cuestionario de seguimiento (Opcional): \n\nEs para aquellas personas que quieren recibir un informe detallado y con gráficas acerca del trabajo que se realizó en la semana, y que permite comparar con semanas anteriores la productividad presente en esta.', [
+        Alert.alert('Más Información', 'Algunas cosas que debes de tener en cuenta son: \n\nA) Técnica de Trabajo Pomodoro:\n\nLa Técnica Pomodoro es un método para mejorar la administración del tiempo dedicado a una actividad. \n\nFue desarrollado por Francesco Cirillo a fines de la década de 1980. Se usa un temporizador para dividir el tiempo en intervalos indivisibles, llamados pomodoros, de 25 minutos de actividad, seguidos de 5 minutos de descanso, con pausas más largas cada cuatro pomodoros. \n\nB) Cuestionario de Pretest: \n\nEl pretest es una prueba que se realiza antes de la primera puesta en marcha de la aplicación, y a través de la cual se determina información general de los participantes (edad, genero, semestre, y conocimiento previo de la técnica de trabajo Pomodoro). \n\nC) Cuestionario de Postest: \n\nEl postest, a diferencia del pretest se realiza una vez que se hizo la primera puesta en marcha de la aplicación, y nos permite determinar el nivel de procrastinación presente en cada uno de los participantes. \n\nD) Cuestionario de seguimiento (Opcional): \n\nEs para aquellas personas que quieren recibir un informe detallado y con gráficas acerca del trabajo que se realizó en la semana, y que permite comparar con semanas anteriores la productividad presente en esta.', [
             {text: 'Cancel', onPress: console.log(false)},
             {text: 'OK', onPress: console.log(false)},
         ])
@@ -24,15 +24,15 @@ export default function rPretestPostestHome({navigation}) {
     const BotonCuestionarios = () => {
         Alert.alert('⚠️ Selección de cuestionario', 'Por favor escoja una opción:',[
             {text: 'Cuestionario de seguimiento', onPress: () => navigation.navigate('CSeguimiento')},
-            {text: 'Cuestionario Postest', onPress: () => navigation.navigate('Postest')},
-            {text: 'Cuestionario Pretest', onPress: () => navigation.navigate('Pretest')},
+            {text: 'Cuestionario de Postest', onPress: () => navigation.navigate('Postest')},
+            {text: 'Cuestionario de Pretest', onPress: () => navigation.navigate('Pretest')},
         ],
         {cancelable: true}
         )
     }
 
     return (
-        <ScrollView>
+        <ScrollView style={styles.background}>
             <View style={styles.center}>
                 <Text style={styles.text}>Selecciona alguna opción:</Text>
             </View>
@@ -66,15 +66,17 @@ export default function rPretestPostestHome({navigation}) {
             </View>
         </ScrollView>
     )
-
 }
 
 const styles = StyleSheet.create({
+    background:{
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
         width: '80%',
         paddingTop: '10%',
-        marginHorizontal: '4%'
+        marginHorizontal: '4%',
     },
     questions: {
         flex: 1,

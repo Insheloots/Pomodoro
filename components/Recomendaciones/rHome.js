@@ -5,7 +5,7 @@ import {Icon} from 'react-native-elements'
 
 export default function rHome({navigation}) {
     return (
-        <ScrollView>
+        <ScrollView style={styles.background}>
             <View style={styles.center}>
                 <Text style={styles.text}>Seleccione el tipo de recomendación que quiere ver:</Text>
             </View>
@@ -50,6 +50,9 @@ export default function rHome({navigation}) {
 }
 
 const styles = StyleSheet.create({
+    background:{
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
         width: '80%',

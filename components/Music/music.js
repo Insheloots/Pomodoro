@@ -22,7 +22,7 @@ const LOFI = async () => {
 };
 
     return (
-        <ScrollView>
+        <ScrollView style={styles.background}>
             <View style={styles.center}>
                 <Text style={styles.text}>Música:</Text>
             </View>
@@ -59,6 +59,9 @@ const LOFI = async () => {
 }
 
 const styles = StyleSheet.create({
+    background:{
+        backgroundColor: "white"
+    },
     center: {
         flex: 1,
         width: '80%',
