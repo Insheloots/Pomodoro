@@ -38,20 +38,23 @@ class TimerButtons extends React.Component {
 const styles=StyleSheet.create({
 	container:{
 		flex: 1,
-		flexDirection: "row" ,
-		marginLeft: 20, 
-		justifyContent: 'space-evenly',
-		marginVertical: '1%',
-		marginBottom: 20
+        marginTop: 30,
+        flexDirection: "row",
+        justifyContent: "center",
+		paddingHorizontal: 80,
+		width: "100%",
 	},
 	buttonStyle:{
+		flex: 1,
+        flexDirection: "row",
+        justifyContent: "center",
 		alignItems: "center",
 		backgroundColor: '#3491cd',
-		padding: 15,
-		marginVertical: "-7%",
+		padding: 20,
+		width: "50%",
 		borderColor: '#3491cd',
 		borderRadius: 8,
-		flexDirection: "row" ,
+		marginHorizontal: 10,
 	}, 
 	 buttonText: {
 		color: "white",

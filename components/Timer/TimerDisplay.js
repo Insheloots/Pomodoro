@@ -7,7 +7,7 @@ class TimerDisplay extends React.Component {
 		return (
 			<View style={styles.container}>
 				<Text style={styles.textStyle}> 
-					{Math.floor(this.props.time/60).toString().padStart(2,"0") + ":" + 
+					{Math.floor(this.props.time/60).toString().padStart(2,"0",) + ":" + 
 					(this.props.time % 60).toString().padStart(2,"0")}
 				</Text>
 			</View>
@@ -19,16 +19,17 @@ export default TimerDisplay;
 
 const styles = StyleSheet.create({
 	container: {
-		marginVertical: "7%",
-		marginBottom: "10%",
-		marginHorizontal: '31%',
-	    padding: "3%",
-	    borderColor: "#3491cd",
-	    borderRadius: 8,
-	    borderWidth: 4,
+		flex: 1,
+        marginTop: 30,
+        flexDirection: "column",
+        justifyContent: "center",
+		marginVertical: "10%",
+		marginHorizontal: "25%",
 		alignItems: 'center',
+		width: "50%",
+		padding: 30,
+	    borderRadius: 8,
 		backgroundColor: "#3491cd",
-		width: "40%",
 	},
 	textStyle: {
 		color: "white",
