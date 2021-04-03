@@ -34,7 +34,7 @@ export default function rPretestPostestHome({navigation}) {
     return (
         <ScrollView>
             <View style={styles.center}>
-                <Text style={styles.text}>¿Tienes alguna duda? Contáctanos:</Text>
+                <Text style={styles.text}>Selecciona alguna opción:</Text>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={Contactanos}>
