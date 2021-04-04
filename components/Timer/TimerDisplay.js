@@ -23,17 +23,19 @@ const styles = StyleSheet.create({
         marginTop: 30,
         flexDirection: "column",
         justifyContent: "center",
-		marginVertical: "10%",
-		marginHorizontal: "25%",
+		paddingTop: "30%",
+		paddingBottom: "30%",
+		marginHorizontal: "15%",
 		alignItems: 'center',
-		width: "50%",
-		padding: 30,
-	    borderRadius: 8,
-		backgroundColor: "#3491cd",
+		width: "70%",
+		backgroundColor: "#f2f2f2",
+	},
+	background:{
+		backgroundColor: "white",
 	},
 	textStyle: {
-		color: "white",
-	    fontSize: 30,
-		fontWeight: "400",
+		color: "black",
+	    fontSize: 80,
+		fontWeight: "600",
 	}
 })

@@ -49,7 +49,7 @@ export default function Navigator(){
             <Stack.Screen
                 name= 'Temporizador Pomodoro'
                 component={Timer}
-                options={{ headerShown: false }}
+                options={{title: 'Temporizador'}}
             />
             <Stack.Screen
                 name = 'ToDoList'

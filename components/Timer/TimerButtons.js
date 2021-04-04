@@ -41,7 +41,7 @@ const styles=StyleSheet.create({
         marginTop: 30,
         flexDirection: "row",
         justifyContent: "center",
-		paddingHorizontal: 80,
+		paddingHorizontal: 65,
 		width: "100%",
 	},
 	buttonStyle:{
