@@ -16,7 +16,6 @@ import {
     Montserrat_700Bold,
     Montserrat_800ExtraBold,
 } from "@expo-google-fonts/montserrat";
-import { Icon } from "react-native-elements";
 
 export default function rHome({ navigation }) {
     let [fontsLoaded, error] = useFonts({

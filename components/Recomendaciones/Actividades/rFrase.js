@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {View, ScrollView, StyleSheet, Text} from 'react-native'
+import {View, ScrollView, StyleSheet, Linking} from 'react-native'
 import * as firebase from 'firebase'
 import 'firebase/firestore'
 import {ListItem} from 'react-native-elements'
@@ -27,11 +27,12 @@ export default function rFrase({navigation}) {
         db.collection('RFrase').onSnapshot(querySnapshot => {
         const respuestas = [];
             querySnapshot.docs.forEach(doc =>{
-                const {frase, autorfrase} = doc.data() 
+                const {frase, autorfrase, linkbiografia} = doc.data() 
                 respuestas.push({
                     id: doc.id,
                     frase,
-                    autorfrase
+                    autorfrase,
+                    linkbiografia
                 })
             })
         setRespuestas(respuestas)
@@ -43,8 +44,11 @@ export default function rFrase({navigation}) {
             <View style={styles.center}>
                 </View>
                 {respuestas.map(respuesta =>{
+                    const Biografía = () => {
+                        Linking.openURL(respuesta.linkbiografia);
+                    };
                     return(
-                        <ListItem key={respuesta.id} bottomDivider> 
+                        <ListItem key={respuesta.id} bottomDivider onPress={Biografía}> 
                             <ListItem.Chevron/>
                             <ListItem.Content>
                                 <ListItem.Title>Frase</ListItem.Title>

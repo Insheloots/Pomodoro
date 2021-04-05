@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {View, ScrollView, StyleSheet, Text, Linking} from 'react-native'
+import {View, ScrollView, StyleSheet, Linking} from 'react-native'
 import * as firebase from 'firebase'
 import 'firebase/firestore'
 import {ListItem} from 'react-native-elements'

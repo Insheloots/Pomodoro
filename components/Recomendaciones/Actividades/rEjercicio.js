@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {View, ScrollView, StyleSheet, Text} from 'react-native'
+import {View, ScrollView, StyleSheet, Linking} from 'react-native'
 import * as firebase from 'firebase'
 import 'firebase/firestore'
 import {ListItem} from 'react-native-elements'
@@ -27,10 +27,11 @@ export default function rEjercicio({navigation}) {
         db.collection('REjercicio').onSnapshot(querySnapshot => {
         const respuestas = [];
             querySnapshot.docs.forEach(doc =>{
-                const {ejercicio} = doc.data() 
+                const {ejercicio, linkyoutube} = doc.data() 
                 respuestas.push({
                     id: doc.id,
-                    ejercicio
+                    ejercicio,
+                    linkyoutube
                 })
             })
         setRespuestas(respuestas)
@@ -42,12 +43,16 @@ export default function rEjercicio({navigation}) {
             <View style={styles.center}>
                 </View>
                 {respuestas.map(respuesta =>{
+                    const Ejercicio = () => {
+                        Linking.openURL(respuesta.linkyoutube);
+                    };
                     return(
-                        <ListItem key={respuesta.id} bottomDivider> 
+                        <ListItem key={respuesta.id} bottomDivider onPress={Ejercicio}> 
                             <ListItem.Chevron/>
                             <ListItem.Content>
                                 <ListItem.Title>Ejercicio</ListItem.Title>
                                 <ListItem.Subtitle>{respuesta.ejercicio}</ListItem.Subtitle>
+                                <ListItem.Subtitle>Link YouTube: {respuesta.linkyoutube}</ListItem.Subtitle>
                             </ListItem.Content>
                         </ListItem>
                     );
