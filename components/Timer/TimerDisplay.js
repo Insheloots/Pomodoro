@@ -19,7 +19,6 @@ export default TimerDisplay;
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
         marginTop: 30,
         flexDirection: "column",
         justifyContent: "center",
@@ -27,15 +26,9 @@ const styles = StyleSheet.create({
 		paddingBottom: "30%",
 		marginHorizontal: "15%",
 		alignItems: 'center',
-		width: "70%",
-		backgroundColor: "#f2f2f2",
-	},
-	background:{
-		backgroundColor: "white",
 	},
 	textStyle: {
-		color: "black",
 	    fontSize: 80,
-		fontWeight: "600",
+		fontFamily: "regularM",
 	}
 })

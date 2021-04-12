@@ -17,33 +17,33 @@ const MainTabScreen = () => (
       activeColor="#fff"
     >
       <Tab.Screen
-        name="Individual"
+        name="hometodoindividual"
         component={hometodoindividual}
         options={{
           tabBarLabel: 'Individual',
-          tabBarColor: '#1f65ff',
+          tabBarColor: '#fff',
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-person" color={color} size={25} />
           ),
         }}
       />
       <Tab.Screen
-        name="Parejas"
+        name="hometodoparejas"
         component={hometodoparejas}
         options={{
           tabBarLabel: 'Parejas',
-          tabBarColor: '#1f65ff',
+          tabBarColor: '#fff',
           tabBarIcon: ({ color }) => (
             <Icon name='user-friends' color={color} size={19} type='font-awesome-5' />
           ),
         }}
       />
       <Tab.Screen
-        name="Grupal"
+        name="hometodogrupal"
         component={hometodogrupal}
         options={{
           tabBarLabel: 'Grupal',
-          tabBarColor: '#1f65ff',
+          tabBarColor: '#fff',
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-people" color={color} size={25} />
           ),

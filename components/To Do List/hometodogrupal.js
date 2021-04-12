@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF"
   },
   Body: {
-    flex: 1
+    flex: 1,
   },
   Form: {
     padding: 0,
@@ -178,6 +178,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingVertical: 5,
     paddingHorizontal: 10,
+    fontFamily: 'regularO',
     borderWidth: 1,
     borderColor: "#eee"
   },
@@ -186,19 +187,20 @@ const styles = StyleSheet.create({
     width: 40,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#1c6cce",
+    backgroundColor: "#007AFF",
     borderRadius: 4,
     marginLeft: 10
   },
   FlatList: {
     flex: 1,
-    marginTop: 5
+    marginVertical: "5%",
+    
   },
   Texto: {
     fontSize: 14,
     color: "#333",
-    fontWeight: "bold",
     marginTop: 4,
+    fontFamily: 'semiBoldO',
     textAlign: "left",
     marginRight: '20%',
   },

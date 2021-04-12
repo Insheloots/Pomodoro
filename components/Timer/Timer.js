@@ -26,7 +26,7 @@ class Timer extends React.Component {
 
 	render() {
 		return (
-			<View>
+			<View style={{backgroundColor: "#fff", height: "100%"}}>
 				<TimerHeader
 					running={this.state.running}
 					intervalType={this.props.intervalType}
@@ -42,8 +42,8 @@ class Timer extends React.Component {
 				/>
 			</View>
 		)
-	}
 
+	}
 	// Invoked immediately after update occurs
 	componentDidUpdate() {
 		if(this.state.running === true && this.state.time == 0)

@@ -15,7 +15,7 @@ const Tab = createMaterialBottomTabNavigator();
 const MainTabScreen = () => (
     <Tab.Navigator
       initialRouteName="hometodo"
-      activeColor="#437EFF"
+      activeColor="#007AFF"
     >
       <Tab.Screen
         name="Home"
@@ -24,7 +24,7 @@ const MainTabScreen = () => (
           tabBarLabel: 'Home',
           tabBarColor: '#FDFDFD',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="ios-albums" color={'#437EFF'} size={25} />
+            <Ionicons name="ios-albums" color={'#007AFF'} size={25} />
           ),
         }}
       />
@@ -35,7 +35,7 @@ const MainTabScreen = () => (
           tabBarLabel: 'Actividades',
           tabBarColor: '#FDFDFD',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="ios-pulse" color={'#437EFF'} size={25} />
+            <Ionicons name="ios-pulse" color={'#007AFF'} size={25} />
           ),
         }}
       />
@@ -46,7 +46,7 @@ const MainTabScreen = () => (
           tabBarLabel: 'Música',
           tabBarColor: '#FDFDFD',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="ios-play-circle" color={'#437EFF'} size={25} />
+            <Ionicons name="ios-play-circle" color={'#007AFF'} size={25} />
           ),
         }}
       />
@@ -57,7 +57,7 @@ const MainTabScreen = () => (
           tabBarLabel: 'Opciones',
           tabBarColor: '#FDFDFD',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="ios-settings" color={'#437EFF'} size={25} />
+            <Ionicons name="ios-settings" color={'#007AFF'} size={25} />
           ),
         }}
       />
