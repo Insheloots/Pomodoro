@@ -73,7 +73,7 @@ export default function hometodoparejas({navigation}) {
         },
         {
           text: "OK",
-          onPress: () => setTask(task.filter(tasks => tasks !== item))
+          onPress: () => setTaskParejas(taskparejas.filter(taskparejas => taskparejas !== item))
         }
       ],
       { cancelable: false }

@@ -73,7 +73,7 @@ export default function hometodogrupal({navigation}) {
         },
         {
           text: "OK",
-          onPress: () => setTask(task.filter(tasks => tasks !== item))
+          onPress: () => setTaskGrupal(taskgrupal.filter(taskgrupal => taskgrupal !== item))
         }
       ],
       { cancelable: false }
