@@ -7,7 +7,6 @@ import {
     OpenSans_400Regular,
     OpenSans_600SemiBold,
     OpenSans_700Bold,
-    OpenSans_800ExtraBold,
 } from "@expo-google-fonts/open-sans";
 import {
     Montserrat_300Light,
@@ -16,6 +15,7 @@ import {
     Montserrat_700Bold,
     Montserrat_800ExtraBold,
 } from "@expo-google-fonts/montserrat";
+import { Icon } from "react-native-elements";
 
 export default function rHome({ navigation }) {
     let [fontsLoaded, error] = useFonts({

@@ -86,9 +86,6 @@ export default class login extends React.Component{
           this.props.navigation.navigate('Inicio de Sesion');
     }
         renderButtonOrLoading(){
-            if(this.state.loading){
-                return <Text> Cargando </Text>
-            }
             return <View>
                 <TouchableOpacity onPress={this.onSignUpPress.bind(this)}>
                 <View style={styles.login}>

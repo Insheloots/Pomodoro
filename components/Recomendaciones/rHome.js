@@ -1,25 +1,53 @@
 import React from 'react'
 import {View, ScrollView, StyleSheet, Text, TouchableOpacity} from 'react-native'
 import 'firebase/firestore'
-import {Icon} from 'react-native-elements'
+import {Icon} from 'react-native-elements';
+import { AppLoading } from "expo";
+import {
+    useFonts,
+    OpenSans_400Regular,
+    OpenSans_600SemiBold,
+    OpenSans_700Bold,
+} from "@expo-google-fonts/open-sans";
+import {
+    Montserrat_300Light,
+    Montserrat_400Regular,
+    Montserrat_500Medium,
+    Montserrat_700Bold,
+    Montserrat_800ExtraBold,
+} from "@expo-google-fonts/montserrat";
 
 export default function rHome({navigation}) {
+    let [fontsLoaded, error] = useFonts({
+        regularO: OpenSans_400Regular,
+        semiBoldO: OpenSans_600SemiBold,
+        boldO: OpenSans_700Bold,
+        lightM: Montserrat_300Light,
+        regularM: Montserrat_400Regular,
+        mediumM: Montserrat_500Medium,
+        boldM: Montserrat_700Bold,
+        extraBoldM: Montserrat_800ExtraBold,
+    });
+
+    if (!fontsLoaded) {
+        return <AppLoading />;
+    }
     return (
-        <ScrollView style={styles.background}>
+        <ScrollView style={styles.container}>
             <View style={styles.center}>
-                <Text style={styles.text}>Seleccione el tipo de recomendación que quiere ver:</Text>
+                <Text style={styles.text}>Recomendaciones</Text>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => navigation.navigate('RCancion')}>
                 <View style={styles.btnView}>
-                    <Text style={styles.buttonText}>Recomendación musical</Text>
+                    <Text style={styles.buttonText}>Música</Text>
                 </View>
                 </TouchableOpacity>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => navigation.navigate('REjercicio')}>
                 <View style={styles.btnView}>
-                    <Text style={styles.buttonText}>Recomendación de ejercicio</Text>
+                    <Text style={styles.buttonText}>Ejercicios físicos</Text>
                 </View>
                 </TouchableOpacity>
             </View>
@@ -40,7 +68,7 @@ export default function rHome({navigation}) {
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => navigation.navigate('RJuego')}>
                 <View style={styles.btnView}>
-                    <Text style={styles.buttonText}>Recomendaciones de juegos</Text>
+                    <Text style={styles.buttonText}> Juegos</Text>
                 </View>
                 </TouchableOpacity>
             </View>
@@ -50,49 +78,30 @@ export default function rHome({navigation}) {
 }
 
 const styles = StyleSheet.create({
-    background:{
+    container:{
+        paddingTop: '10%',
         backgroundColor: "white"
     },
     center: {
         flex: 1,
         width: '80%',
-        paddingTop: '10%',
+        paddingVertical: '5%',
         marginHorizontal: '4%'
     },
-    questions: {
-        flex: 1,
-        width: '80%',
-        marginHorizontal: '4%',
-        paddingTop: '2%',
-    },
     text: {
-        fontSize: 14,
+        fontFamily: "boldM",
+        fontSize: 20,
     },
     buttonText: {
-        color: 'white',
+        color: "white",
+        fontFamily: 'regularM',
         fontSize: 14,
-        textAlign: 'center',
-    },
-    buttonContainer: {
-        flex: 1,
-        marginHorizontal: '7%',
-
-    },
-    container: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    buttonContainer: {
-        flex: 1,
-        marginHorizontal: '10%',
+        textAlign: "center",
     },
     btnView:{
-        borderRadius: 8,
-        paddingVertical: 10,
+        borderRadius: 25,
+        paddingVertical: 12,
         marginTop: 15,
-        paddingHorizontal: 10,
-        backgroundColor: '#3491cd'
+        backgroundColor: "#1f65ff",
     }
 });

@@ -2,12 +2,15 @@ import React, {useState} from 'react'
 import {View, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, Alert, Linking} from 'react-native'
 import 'firebase/firestore'
 import {Icon} from 'react-native-elements'
+import { AppLoading } from "expo";
+
 
 const Contactanos = () => {
     Linking.openURL('mailto: afmelo@ucundinamarca.edu.co, diegoalexanderdiaz@ucundinamarca.edu.co, aparenas@ucundinamarca.edu.co');
 };
 
 export default function rPretestPostestHome({navigation}) {
+    
     const Confirmacion = () => {
         Alert.alert('⚠️ Cerrar sesión', '¿Estás seguro que quieres cerrar sesión?', [
             {text: 'Cancel', onPress: console.log(false)},
@@ -34,7 +37,7 @@ export default function rPretestPostestHome({navigation}) {
     return (
         <ScrollView style={styles.background}>
             <View style={styles.center}>
-                <Text style={styles.text}>Selecciona alguna opción:</Text>
+                <Text style={styles.text}>Opciones</Text>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={Contactanos}>
@@ -70,13 +73,14 @@ export default function rPretestPostestHome({navigation}) {
 
 const styles = StyleSheet.create({
     background:{
+        paddingTop: '10%',
         backgroundColor: "white"
     },
     center: {
         flex: 1,
         width: '80%',
-        paddingTop: '10%',
-        marginHorizontal: '4%',
+        paddingVertical: '5%',
+        marginHorizontal: '4%'
     },
     questions: {
         flex: 1,
@@ -85,12 +89,14 @@ const styles = StyleSheet.create({
         paddingTop: '2%',
     },
     text: {
-        fontSize: 14,
+        fontFamily: "boldM",
+        fontSize: 20,
     },
     buttonText: {
-        color: 'white',
+        color: "white",
+        fontFamily: 'regularM',
         fontSize: 14,
-        textAlign: 'center',
+        textAlign: "center",
     },
     container: {
         flex: 1,
@@ -103,10 +109,9 @@ const styles = StyleSheet.create({
         marginHorizontal: '10%',
     },
     btnView:{
-        borderRadius: 8,
-        paddingVertical: 10,
+        borderRadius: 25,
+        paddingVertical: 12,
         marginTop: 15,
-        paddingHorizontal: 10,
-        backgroundColor: '#3491cd'
+        backgroundColor: "#1f65ff",
     }
 });
