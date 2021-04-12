@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, TextInput, Alert, TouchableOpacity, Linking} from 'react-native'
+import {Text, View, StyleSheet, TextInput, Alert, TouchableOpacity} from 'react-native'
 import React, {Component} from 'react'
 import * as firebase from 'firebase'
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
@@ -83,13 +83,9 @@ export default class login extends React.Component{
             }
         })
     }
+
         onRegisterPress(){
-          Alert.alert('Términos y Condiciones', 'Ley 1581 de 2012:\n\nAl darle en el botón "Registrate" aceptas que la información solicitada (correo electrónico y contraseña) puede ser tratada según lo establecido por la ley.', [
-            {text: 'Más info', onPress: () => Linking.openURL('https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981')},
-            {text: 'Rechazar', onPress: console.log(false)},
-            {text: 'Aceptar', onPress: () => this.props.navigation.navigate('Registro')},
-            
-        ])    
+          this.props.navigation.navigate('Registro')
         }
 
         renderButtonOrLoading(){
@@ -108,26 +104,18 @@ export default class login extends React.Component{
 
         render(){
             return(
-                
-                    
                     <View style={styles.container}>
-                      
-                    
-                    <Text style={styles.title}>Inicio sesión</Text>
-                    <Text style={styles.text}>Pomodoro time te ayudara a gestionar tu tiempo.</Text>
-                      
+                      <Text style={styles.title}>Inicio sesión</Text>
+                      <Text style={styles.text}>Pomodoro time te ayudara a gestionar tu tiempo.</Text>
                     <View style={styles.action}>
                       <View style={[styles.section,{borderColor:this.state.borderColor=="email" ? '#3465d9' : 'gray'}]}>
-
                         <MaterialIcons name="email" size={20}
-                        color={this.state.borderColor=="email" ? '#3465d9' : 'gray'} />
-
+                          color={this.state.borderColor=="email" ? '#3465d9' : 'gray'} />
                         <TextInput style={[styles.textInput,{color:this.state.borderColor=="email" ? '#3465d9' : 'gray'}]} value= {this.state.email} onChangeText={email => this.setState({email})}
                           placeholder="Correo electrónico" 
                           onFocus={()=>this.onFocus("email")}
                         />
                       </View>
-                      
                       <View style={[styles.section,{borderColor:this.state.borderColor=="password" ? '#3465d9' : 'gray'}]}>
                         <MaterialIcons name="lock-outline" size={20} 
                         color={this.state.borderColor=="password" ? '#3465d9' : 'gray'}/>
@@ -137,20 +125,15 @@ export default class login extends React.Component{
                         style={[styles.textInput, {color:this.state.borderColor=="password" ? '#3465d9' : 'gray'}]}/>
                       </View>
                     </View>
-
-                    {this.renderButtonOrLoading()}
-                    
-
+                      {this.renderButtonOrLoading()}
                     <View style={styles.signup}>
                       <Text style={[styles.textSingup, {color: 'gray'}]}>¿No tienes una cuenta?</Text>
-                      <TouchableOpacity onPress={this.onRegisterPress.bind(this)}>
-                        <Text style={[styles.textSingup, {color: '#3465d9', marginLeft: 3}]}>Registrate</Text>
-                      </TouchableOpacity>
+                        <TouchableOpacity onPress={this.onRegisterPress.bind(this)}>
+                          <Text style={[styles.textSingup, {color: '#3465d9', marginLeft: 3}]}>Registrate</Text>
+                        </TouchableOpacity>
                     </View>
-            </View>
-    
+                  </View>
             )
-
         }
     }
 

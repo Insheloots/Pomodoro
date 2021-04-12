@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, Alert, TextInput, TouchableOpacity, ScrollView} from 'react-native'
+import {Text, View, StyleSheet, Alert, TextInput, TouchableOpacity, Linking} from 'react-native'
 import React, {Component} from 'react'
 import * as firebase from 'firebase'
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
@@ -82,12 +82,23 @@ export default class login extends React.Component{
               }
         })
         }
+
         onBackPress(){
           this.props.navigation.navigate('Inicio de Sesion');
-    }
+        }
+
+        onRegisterPress(){
+          Alert.alert('Términos y Condiciones', 'Ley 1581 de 2012:\n\nAl darle en el botón "Registrate" aceptas que la información solicitada (correo electrónico y contraseña) puede ser tratada según lo establecido por la ley.', [
+            {text: 'Más info', onPress: () => Linking.openURL('https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981')},
+            {text: 'Rechazar', onPress: console.log(false)},
+            {text: 'Aceptar', onPress: this.onSignUpPress.bind(this)},
+ 
+        ])    
+        }
+
         renderButtonOrLoading(){
             return <View>
-                <TouchableOpacity onPress={this.onSignUpPress.bind(this)}>
+                <TouchableOpacity onPress={this.onRegisterPress.bind(this)}>
                 <View style={styles.login}>
                   <Text style={styles.textLogin}>Registrarte</Text>
                 </View>
@@ -99,9 +110,9 @@ export default class login extends React.Component{
             borderColor: value
           });
         }
+
         render(){
             return(
-              
                 <View style={styles.container}>
                     <Text style={styles.title}>Registrarte</Text>
                     <Text style={styles.text}>Es rápido y fácil.</Text>
@@ -123,22 +134,15 @@ export default class login extends React.Component{
                       onFocus={()=>this.onFocus("password")}/>
                     </View>
                   </View>
-                    
-                  {this.renderButtonOrLoading()}
+                    {this.renderButtonOrLoading()}
                   <View style={styles.signup}>
                   <Text style={[styles.textSignup, {color: 'gray'}]}>¿Ya tienes una cuenta?</Text>
                     <TouchableOpacity onPress={this.onBackPress.bind(this)}>
-                      
                       <Text style={[styles.textSignup, {color: '#3465d9', marginLeft: 3}]}>Inicia sesión</Text>
-                      
                     </TouchableOpacity>
                   </View>
-                    
                 </View>
-                
-              
             )
-
         }
     }
 
