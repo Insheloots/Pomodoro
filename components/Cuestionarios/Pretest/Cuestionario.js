@@ -295,7 +295,7 @@ export default function Cuestionario({navigation}) {
                 </View>
             </View>
             <View style={styles.questions}>
-                <Text style={styles.text}>8. ¿Consideraría necesaria la creación de una aplicación móvil que permitiera gestionar su tiempo?</Text>
+                <Text style={styles.text}>8. ¿Consideraría necesaria la creación de una aplicación móvil que permita gestionar su tiempo?</Text>
                 <View style={styles.pick} >
                 <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('octava', value)} selectedValue={state.octava}>
                     <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>

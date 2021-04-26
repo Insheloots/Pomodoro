@@ -123,6 +123,7 @@ export default function CSeguimiento({navigation}) {
     }
 
     return (
+        <ScrollView style={styles.backgroundscroll}>
         <View style={styles.background}>
             <View style={styles.questions}>
                 <Text style={{fontFamily: 'semiBoldO', marginVertical:10, textAlign:'justify'}}>Responda las siguientes preguntas una vez por semana y en el transcurso de 2 dias aproximadamente le llegará un informe personalizado a su correo electrónico.</Text>
@@ -155,7 +156,7 @@ export default function CSeguimiento({navigation}) {
                 </View>
             </View>
             <View style={styles.questions}>
-                <Text style={styles.text}>4. ¿Cuántas veces a la semana utilizo Pomodoro Time aproximadamente?</Text>
+                <Text style={styles.text}>4. ¿Cuántas veces a la semana utilizó Pomodoro Time aproximadamente?</Text>
                 <View style={styles.pick} >
                 <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('cuarta', value)} selectedValue={state.cuarta}>
                     <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>
@@ -175,6 +176,7 @@ export default function CSeguimiento({navigation}) {
                     </TouchableOpacity>
             </View>
         </View>
+        </ScrollView>
     )
 
 }
@@ -182,6 +184,9 @@ export default function CSeguimiento({navigation}) {
 const styles = StyleSheet.create({
     background: {
         flex:1,
+        backgroundColor: '#fff',
+    },
+    backgroundscroll: {
         backgroundColor: '#fff',
     },
     questions: {
