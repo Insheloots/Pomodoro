@@ -172,7 +172,6 @@ const styles = StyleSheet.create({
       textInput: {
         flex: 1,
         paddingLeft: 10,
-
       },
       textLogin: {
         color: 'white',

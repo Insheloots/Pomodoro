@@ -245,139 +245,164 @@ export default function Cuestionario2({navigation}) {
     return (
         <ScrollView>
             <View style={styles.background}>
-            <View style={styles.center}>
+            <View style={styles.questions}>
                 <Text style={styles.text}>1. ¿Qué edad tiene?</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('primera', value)} selectedValue={state.primera}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Entre 14 y 24" value="Entre 14 y 24"/>
-                    <Picker.Item label="Entre 25 y 34" value="Entre 25 y 34"/>
-                    <Picker.Item label="Entre 35 y 44 años" value="Entre 35 y 44 años"/>
-                    <Picker.Item label="Más de 45 años" value="Más de 45 años"/>
+                <View style={styles.pick} >
+                <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('primera', value)} selectedValue={state.primera}>
+                    <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>
+                    <Picker.Item color="#344953" label="Entre 14 y 24" value="Entre 14 y 24"/>
+                    <Picker.Item color="#344953" label="Entre 25 y 34" value="Entre 25 y 34"/>
+                    <Picker.Item color="#344953" label="Entre 35 y 44 años" value="Entre 35 y 44 años"/>
+                    <Picker.Item color="#344953" label="Más de 45 años" value="Más de 45 años"/>
                 </Picker>
+                </View>
             </View>
             <View style={styles.questions}>
                 <Text style={styles.text}>2. Genero:</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('segunda', value)} selectedValue={state.segunda}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Masculino" value="Masculino"/>
-                    <Picker.Item label="Femenino" value="Femenino"/>
+                <View style={styles.pick} >
+                <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('segunda', value)} selectedValue={state.segunda}>
+                    <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>
+                    <Picker.Item color="#344953" label="Masculino" value="Masculino"/>
+                    <Picker.Item color="#344953" label="Femenino" value="Femenino"/>
                 </Picker>
+                </View>
             </View>
             <View style={styles.questions}>
                 <Text style={styles.text}>3. ¿Qué semestre cursa actualmente?</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('tercera', value)} selectedValue={state.tercera}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Primer semestre" value="Primer semestre"/>
-                    <Picker.Item label="Segundo semestre" value="Segundo semestre"/>
-                    <Picker.Item label="Tercer semestre" value="Tercer semestre"/>
-                    <Picker.Item label="Cuarto semestre" value="Cuarto semestre"/>
-                    <Picker.Item label="Quinto semestre" value="Quinto semestre"/>
-                    <Picker.Item label="Sexto semestre" value="Sexto semestre"/>
-                    <Picker.Item label="Septimo semestre" value="Septimo semestre"/>
-                    <Picker.Item label="Octavo semestre" value="Octavo semestre"/>
-                    <Picker.Item label="Noveno semestre" value="Noveno semestre"/>
+                <View style={styles.pick} >
+                <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('tercera', value)} selectedValue={state.tercera}>
+                    <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>
+                    <Picker.Item color="#344953" label="Primer semestre" value="Primer semestre"/>
+                    <Picker.Item color="#344953" label="Segundo semestre" value="Segundo semestre"/>
+                    <Picker.Item color="#344953" label="Tercer semestre" value="Tercer semestre"/>
+                    <Picker.Item color="#344953" label="Cuarto semestre" value="Cuarto semestre"/>
+                    <Picker.Item color="#344953" label="Quinto semestre" value="Quinto semestre"/>
+                    <Picker.Item color="#344953" label="Sexto semestre" value="Sexto semestre"/>
+                    <Picker.Item color="#344953" label="Septimo semestre" value="Septimo semestre"/>
+                    <Picker.Item color="#344953" label="Octavo semestre" value="Octavo semestre"/>
+                    <Picker.Item color="#344953" label="Noveno semestre" value="Noveno semestre"/>
                 </Picker>
+                </View>
             </View>
             <View style={styles.questions}>
                 <Text style={styles.text}>4. Pospongo lo que tengo que hacer más de lo razonable.</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('cuarta', value)} selectedValue={state.cuarta}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Nunca" value="Nunca"/>
-                    <Picker.Item label="Casi nunca" value="Casi nunca"/>
-                    <Picker.Item label="Aveces" value="Aveces"/>
-                    <Picker.Item label="Casi siempre" value="Casi siempre"/>
-                    <Picker.Item label="Siempre" value="Siempre"/>
+                <View style={styles.pick} >
+                <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('cuarta', value)} selectedValue={state.cuarta}>
+                    <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>
+                    <Picker.Item color="#344953" label="Nunca" value="Nunca"/>
+                    <Picker.Item color="#344953" label="Casi nunca" value="Casi nunca"/>
+                    <Picker.Item color="#344953" label="Aveces" value="Aveces"/>
+                    <Picker.Item color="#344953" label="Casi siempre" value="Casi siempre"/>
+                    <Picker.Item color="#344953" label="Siempre" value="Siempre"/>
                 </Picker>
+                </View>
             </View>
             <View style={styles.questions}>
                 <Text style={styles.text}>5. Me lamento de no haber hecho antes lo que tenía pendiente.</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('quinta', value)} selectedValue={state.quinta}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Nunca" value="Nunca"/>
-                    <Picker.Item label="Casi nunca" value="Casi nunca"/>
-                    <Picker.Item label="Aveces" value="Aveces"/>
-                    <Picker.Item label="Casi siempre" value="Casi siempre"/>
-                    <Picker.Item label="Siempre" value="Siempre"/>
+                <View style={styles.pick} >
+                <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('quinta', value)} selectedValue={state.quinta}>
+                    <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>
+                    <Picker.Item color="#344953" label="Nunca" value="Nunca"/>
+                    <Picker.Item color="#344953" label="Casi nunca" value="Casi nunca"/>
+                    <Picker.Item color="#344953" label="Aveces" value="Aveces"/>
+                    <Picker.Item color="#344953" label="Casi siempre" value="Casi siempre"/>
+                    <Picker.Item color="#344953" label="Siempre" value="Siempre"/>
                 </Picker>
+                </View>
             </View>
             <View style={styles.questions}>
                 <Text style={styles.text}>6. Me pongo a pensar en otras cosas mientras realizo una actividad.</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('sexta', value)} selectedValue={state.sexta}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Nunca" value="Nunca"/>
-                    <Picker.Item label="Casi nunca" value="Casi nunca"/>
-                    <Picker.Item label="Aveces" value="Aveces"/>
-                    <Picker.Item label="Casi siempre" value="Casi siempre"/>
-                    <Picker.Item label="Siempre" value="Siempre"/>
+                <View style={styles.pick} >
+                <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('sexta', value)} selectedValue={state.sexta}>
+                    <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>
+                    <Picker.Item color="#344953" label="Nunca" value="Nunca"/>
+                    <Picker.Item color="#344953" label="Casi nunca" value="Casi nunca"/>
+                    <Picker.Item color="#344953" label="Aveces" value="Aveces"/>
+                    <Picker.Item color="#344953" label="Casi siempre" value="Casi siempre"/>
+                    <Picker.Item color="#344953" label="Siempre" value="Siempre"/>
                 </Picker>
+                </View>
             </View>
             <View style={styles.questions}>
                 <Text style={styles.text}>7. Suelo realizar las actividades sin tomar como referencia la fecha de entrega.</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('septima', value)} selectedValue={state.septima}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Nunca" value="Nunca"/>
-                    <Picker.Item label="Casi nunca" value="Casi nunca"/>
-                    <Picker.Item label="Aveces" value="Aveces"/>
-                    <Picker.Item label="Casi siempre" value="Casi siempre"/>
-                    <Picker.Item label="Siempre" value="Siempre"/>
+                <View style={styles.pick} >
+                <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('septima', value)} selectedValue={state.septima}>
+                    <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>
+                    <Picker.Item color="#344953" label="Nunca" value="Nunca"/>
+                    <Picker.Item color="#344953" label="Casi nunca" value="Casi nunca"/>
+                    <Picker.Item color="#344953" label="Aveces" value="Aveces"/>
+                    <Picker.Item color="#344953" label="Casi siempre" value="Casi siempre"/>
+                    <Picker.Item color="#344953" label="Siempre" value="Siempre"/>
                 </Picker>
+                </View>
             </View>
             <View style={styles.questions}>
                 <Text style={styles.text}>8. Desperdicio mi tiempo libre haciendo cosas sin importancia.</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('octava', value)} selectedValue={state.octava}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Nunca" value="Nunca"/>
-                    <Picker.Item label="Casi nunca" value="Casi nunca"/>
-                    <Picker.Item label="Aveces" value="Aveces"/>
-                    <Picker.Item label="Casi siempre" value="Casi siempre"/>
-                    <Picker.Item label="Siempre" value="Siempre"/>
+                <View style={styles.pick} >
+                <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('octava', value)} selectedValue={state.octava}>
+                    <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>
+                    <Picker.Item color="#344953" label="Nunca" value="Nunca"/>
+                    <Picker.Item color="#344953" label="Casi nunca" value="Casi nunca"/>
+                    <Picker.Item color="#344953" label="Aveces" value="Aveces"/>
+                    <Picker.Item color="#344953" label="Casi siempre" value="Casi siempre"/>
+                    <Picker.Item color="#344953" label="Siempre" value="Siempre"/>
                 </Picker>
+                </View>
             </View>
             <View style={styles.questions}>
                 <Text style={styles.text}>9. Omito la programación de un tiempo específico para realizar una actividad.</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('novena', value)} selectedValue={state.novena}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Nunca" value="Nunca"/>
-                    <Picker.Item label="Casi nunca" value="Casi nunca"/>
-                    <Picker.Item label="Aveces" value="Aveces"/>
-                    <Picker.Item label="Casi siempre" value="Casi siempre"/>
-                    <Picker.Item label="Siempre" value="Siempre"/>
+                <View style={styles.pick} >
+                <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('novena', value)} selectedValue={state.novena}>
+                    <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>
+                    <Picker.Item color="#344953" label="Nunca" value="Nunca"/>
+                    <Picker.Item color="#344953" label="Casi nunca" value="Casi nunca"/>
+                    <Picker.Item color="#344953" label="Aveces" value="Aveces"/>
+                    <Picker.Item color="#344953" label="Casi siempre" value="Casi siempre"/>
+                    <Picker.Item color="#344953" label="Siempre" value="Siempre"/>
                 </Picker>
+                </View>
             </View>
             <View style={styles.questions}>
                 <Text style={styles.text}>10. No suelo enfocarme en una actividad durante su realización.</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('decima', value)} selectedValue={state.decima}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Nunca" value="Nunca"/>
-                    <Picker.Item label="Casi nunca" value="Casi nunca"/>
-                    <Picker.Item label="Aveces" value="Aveces"/>
-                    <Picker.Item label="Casi siempre" value="Casi siempre"/>
-                    <Picker.Item label="Siempre" value="Siempre"/>
+                <View style={styles.pick} >
+                <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('decima', value)} selectedValue={state.decima}>
+                    <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>
+                    <Picker.Item color="#344953" label="Nunca" value="Nunca"/>
+                    <Picker.Item color="#344953" label="Casi nunca" value="Casi nunca"/>
+                    <Picker.Item color="#344953" label="Aveces" value="Aveces"/>
+                    <Picker.Item color="#344953" label="Casi siempre" value="Casi siempre"/>
+                    <Picker.Item color="#344953" label="Siempre" value="Siempre"/>
                 </Picker>
+                </View>
             </View>
             <View style={styles.questions}>
                 <Text style={styles.text}>11. No encuentro el gusto ni me motiva el comenzar una actividad o tarea.</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('onceava', value)} selectedValue={state.onceava}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Nunca" value="Nunca"/>
-                    <Picker.Item label="Casi nunca" value="Casi nunca"/>
-                    <Picker.Item label="Aveces" value="Aveces"/>
-                    <Picker.Item label="Casi siempre" value="Casi siempre"/>
-                    <Picker.Item label="Siempre" value="Siempre"/>
+                <View style={styles.pick} >
+                <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('onceava', value)} selectedValue={state.onceava}>
+                    <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>
+                    <Picker.Item color="#344953" label="Nunca" value="Nunca"/>
+                    <Picker.Item color="#344953" label="Casi nunca" value="Casi nunca"/>
+                    <Picker.Item color="#344953" label="Aveces" value="Aveces"/>
+                    <Picker.Item color="#344953" label="Casi siempre" value="Casi siempre"/>
+                    <Picker.Item color="#344953" label="Siempre" value="Siempre"/>
                 </Picker>
+                </View>
             </View>
             <View style={styles.questions}>
                 <Text style={styles.text}>12. No siento motivación al haber completado una actividad que tenía pendiente.</Text>
-                <Picker onValueChange={(value) => EstablecerTexto('doceava', value)} selectedValue={state.doceava}>
-                    <Picker.Item label="Selecciona una opción" value="Selecciona una opción"/>
-                    <Picker.Item label="Nunca" value="Nunca"/>
-                    <Picker.Item label="Casi nunca" value="Casi nunca"/>
-                    <Picker.Item label="Aveces" value="Aveces"/>
-                    <Picker.Item label="Casi siempre" value="Casi siempre"/>
-                    <Picker.Item label="Siempre" value="Siempre"/>
+                <View style={styles.pick} >
+                <Picker style={styles.pickP} onValueChange={(value) => EstablecerTexto('doceava', value)} selectedValue={state.doceava}>
+                    <Picker.Item color="#ccc" label="Selecciona una opción" value="Selecciona una opción"/>
+                    <Picker.Item color="#344953" label="Nunca" value="Nunca"/>
+                    <Picker.Item color="#344953" label="Casi nunca" value="Casi nunca"/>
+                    <Picker.Item color="#344953" label="Aveces" value="Aveces"/>
+                    <Picker.Item color="#344953" label="Casi siempre" value="Casi siempre"/>
+                    <Picker.Item color="#344953" label="Siempre" value="Siempre"/>
                 </Picker>
+                </View>
+                
             </View>
-            <View style={{marginVertical: '5%', marginHorizontal: '8%'}}>
+            <View style={{marginVertical: '5%', marginHorizontal: '15%'}}>
                     <TouchableOpacity onPress={() => Confirmacion()}>
                     <View style={styles.btnView}>
                     <Text style={styles.buttonText}>Enviar</Text>
@@ -392,33 +417,45 @@ export default function Cuestionario2({navigation}) {
 
 const styles = StyleSheet.create({
     background: {
-        backgroundColor: "white"
-    },
-    center: {
-        flex: 1,
-        width: '80%',
-        paddingTop: '6%',
-        marginHorizontal: '4%'
+        backgroundColor: '#fff',
     },
     questions: {
         flex: 1,
         width: '80%',
-        marginHorizontal: '4%',
+        justifyContent: 'center',
+        alignContent: 'center',
+        marginHorizontal: '8%',
         paddingTop: '2%',
+        marginVertical: '1%',
+    },
+    pickP: {
+        color: '#344953',  
+        justifyContent: 'center',
+        marginHorizontal: 5,  
+    },
+    pick: {
+        borderWidth: 1,
+        borderColor: '#344953',
+        borderRadius: 10,
+        marginVertical: '3%',
+        fontFamily: 'regularO',
     },
     text: {
+        marginHorizontal: 3,
+        fontFamily: 'regularO',
+        textAlign: 'justify',
         fontSize: 14,
     },
     buttonText: {
+        fontFamily: 'regularM',
         color: 'white',
         fontSize: 14,
         textAlign: 'center',
     },
     btnView:{
-        borderRadius: 8,
-        paddingVertical: 10,
+        borderRadius: 25,
+        paddingVertical: 12,
         marginTop: 15,
-        paddingHorizontal: 10,
-        backgroundColor: '#3491cd'
+        backgroundColor: "#1f65ff",
     }
 });

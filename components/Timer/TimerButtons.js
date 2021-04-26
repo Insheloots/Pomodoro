@@ -56,7 +56,7 @@ const styles=StyleSheet.create({
     },
     btnView: {
         borderRadius: 25,
-        paddingVertical: 12,
+        paddingVertical: 8,
         marginTop: 15,
         paddingHorizontal: 60,
         backgroundColor: "#1f65ff",
