@@ -25,7 +25,7 @@ export default function rPretestPostestHome({navigation}) {
     }
     
     const BotonCuestionarios = () => {
-        Alert.alert('⚠️ Selección de cuestionario', 'Por favor escoja una opción:',[
+        Alert.alert('⚠️ Selección de cuestionario', 'Si quieres conocer más acerca de estos cuestionarios dirígete al botón de "Más información" en el menú de opciones.',[
             {text: 'Cuestionario de seguimiento', onPress: () => navigation.navigate('CSeguimiento')},
             {text: 'Cuestionario de Postest', onPress: () => navigation.navigate('Postest')},
             {text: 'Cuestionario de Pretest', onPress: () => navigation.navigate('Pretest')},

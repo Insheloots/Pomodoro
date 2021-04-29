@@ -2,7 +2,7 @@
   "expo": {
     "name": "Pomodoro Time",
     "slug": "PomodoroTime",
-    "version": "1.0.0",
+    "version": "3.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -19,11 +19,12 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.mrinsheloots.pomodorotime",
-      "buildNumber": "1.0.0"
+      "buildNumber": "3.0.0"
     },
     "android": {
       "package": "com.mrinsheloots.pomodorotime",
-      "versionCode": 1
+      "versionCode": 3,
+      "permissions": []
     },
     "web": {
       "favicon": "./assets/favicon.png"
