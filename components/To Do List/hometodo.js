@@ -1,5 +1,5 @@
-import React from "react";
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import React, { useEffect } from "react";
+import { View, StyleSheet, Text, TouchableOpacity, BackHandler} from "react-native";
 import "firebase/firestore";
 import { AppLoading } from "expo";
 import {

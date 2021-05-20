@@ -2,6 +2,7 @@ import React from 'react'
 import {createStackNavigator} from '@react-navigation/stack'
 import LoginScreen from '../components/LoginScreen'
 import RegisterScreen from '../components/RegisterScreen'
+import ForgotPassword from '../components/ForgotPassword'
 import ToDo from '../components/To Do List/hometodo'
 import MainHome from '../components/MainHome'
 import MainActividad from '../components/MainActividad'
@@ -34,6 +35,11 @@ export default function Navigator(){
             <Stack.Screen
                 name = 'Inicio de Sesion'
                 component = {LoginScreen}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name = 'RestablecerContraseña'
+                component = {ForgotPassword}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
