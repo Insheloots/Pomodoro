@@ -39,7 +39,7 @@ export default function hometodoparejas({navigation}) {
       return;
     }
 
-    else if(newTaskParejas.length >= 20){
+    else if(newTaskParejas.length >= 200){
       Alert.alert(
         '⚠️ Tamaño de la tarea',
         'La actividad ingresada contiene muchos caracteres.',
@@ -114,18 +114,20 @@ export default function hometodoparejas({navigation}) {
               style={styles.FlatList}
               renderItem={({ item }) => (
                 <View style={styles.ContainerView}>
-                  <Text style={styles.Texto}>{item}</Text>
-                  <TouchableOpacity onPress={() => removeTaskParejas(item)}>
-                    <MaterialIcons
-                      name="delete-forever"
-                      size={25}
-                      color="#f64c75"
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity onPress={() => navigation.navigate('Temporizador Pomodoro')}>
-                     <Ionicons name="md-time" size={25} color="#f64c75" />
-                  </TouchableOpacity>
-                </View>
+                <Text style={styles.Texto}>{item}</Text>
+                <View style={styles.fixToText}>
+                <TouchableOpacity onPress={() => removeTaskParejas(item)}>
+                  <MaterialIcons style={styles.iconrecyclebin}
+                    name="delete-forever"
+                    size={25}
+                    color="#f64c75"
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Temporizador Pomodoro')}>
+                   <Ionicons style={styles.iconclock} name="md-time" size={25} color="#f64c75" />
+                </TouchableOpacity>
+              </View>
+              </View>
                 
               )}
             />
@@ -202,15 +204,13 @@ const styles = StyleSheet.create({
     marginTop: 4,
     fontFamily: 'semiBoldO',
     textAlign: "left",
-    marginRight: '20%',
+    marginRight: '35%',
   },
   ContainerView: {
     marginBottom: 15,
     padding: 15,
     borderRadius: 4,
     backgroundColor: "#eee",
-    display: "flex",
-    flexDirection: "row",
     justifyContent: "space-between",
     borderWidth: 1,
     borderColor: "#eee"
@@ -231,5 +231,10 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
     marginHorizontal: '15%',
-  }
+  },
+  fixToText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingLeft: '75%'
+  },
 });
