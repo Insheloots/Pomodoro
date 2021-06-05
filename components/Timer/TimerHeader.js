@@ -1,6 +1,6 @@
 import React from 'react';
 import { Platform, StyleSheet, Text} from 'react-native';
-
+import {activateKeepAwake} from 'expo-keep-awake';
 class TimerHeader extends React.Component {
 
 	// handles the display of timer header
@@ -34,8 +34,8 @@ class TimerHeader extends React.Component {
 
 	}
 	render() {
-	
 		let texttoshow = this.handleDisplay()
+		activateKeepAwake(); 
 		return(
 			<Text style={styles.blacktext}>{texttoshow}</Text>
 		)				

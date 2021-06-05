@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
+import {activateKeepAwake} from 'expo-keep-awake';
 class TimerDisplay extends React.Component {
-
 	render() {
+		activateKeepAwake(); 
 		return (
 			<View style={styles.container}>
 				<Text style={styles.textStyle}> 
@@ -15,7 +15,11 @@ class TimerDisplay extends React.Component {
 	}
 }
 
+    
+
 export default TimerDisplay;
+
+
 
 const styles = StyleSheet.create({
 	container: {
