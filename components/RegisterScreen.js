@@ -111,6 +111,10 @@ export default class login extends React.Component{
           });
         }
 
+        setPasswordVisibility = () => {
+          this.setState({ hidePassword: !this.state.hidePassword });
+        }
+
         render(){
             return(
                 <View style={styles.container}>
@@ -125,14 +129,18 @@ export default class login extends React.Component{
                       onFocus={()=>this.onFocus("email")}/>
                     </View>
                   </View>
-                  <View style={styles.action}>
-                    <View  style={[styles.section,{borderColor:this.state.borderColor=="password" ? '#3465d9' : 'gray'}]}>
-                      <MaterialIcons name="lock-outline" size={20} 
+                  <View>
+                  <View style={[styles.section,{borderColor:this.state.borderColor=="password" ? '#3465d9' : 'gray'}]}>
+                        <MaterialIcons name="lock-outline" size={20} 
                         color={this.state.borderColor=="password" ? '#3465d9' : 'gray'}/>
-                      <TextInput value= {this.state.password} onChangeText={password => this.setState({password})} placeholder="Contraseña" secureTextEntry={true} 
-                      style={[styles.textInput, {color:this.state.borderColor=="password" ? '#3465d9' : 'gray'}]} 
-                      onFocus={()=>this.onFocus("password")}/>
-                    </View>
+                        <TextInput value= {this.state.password} onChangeText={password => this.setState({password})} 
+                        placeholder="Contraseña" secureTextEntry={this.state.hidePassword}
+                        onFocus={()=>this.onFocus("password")} 
+                        style={[styles.textInput, {color:this.state.borderColor=="password" ? '#3465d9' : 'gray'}]}/>
+                        <TouchableOpacity activeOpacity={0.8} onPress={this.setPasswordVisibility}>
+                          <MaterialIcons name="visibility" size={20} color={this.state.borderColor=="password" ? '#3465d9' : 'gray'}/>
+                        </TouchableOpacity>
+                      </View>
                   </View>
                     {this.renderButtonOrLoading()}
                   <View style={styles.signup}>

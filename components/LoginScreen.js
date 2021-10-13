@@ -92,6 +92,10 @@ export default class login extends React.Component{
           this.props.navigation.navigate('RestablecerContraseña')
         }
 
+        onUserPress(){
+          this.props.navigation.navigate('MainHome');
+        }
+
         renderButtonOrLoading(){
             return <View>
                 <TouchableOpacity style={styles.login} onPress={this.onLoginPress.bind(this)}>
@@ -146,6 +150,11 @@ export default class login extends React.Component{
                     <View style={styles.forgot}>
                         <TouchableOpacity onPress={this.onForgotPasswordPress.bind(this)}>
                           <Text style={[styles.textSingup, {color: '#3465d9', marginLeft: 3}]}>¿Olvidaste tu contraseña?</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.forgot}>
+                        <TouchableOpacity onPress={this.onUserPress.bind(this)}>
+                          <Text style={[styles.textSingup, {color: '#3465d9', marginLeft: 3}]}>Iniciar como invitado</Text>
                         </TouchableOpacity>
                     </View>
                   </View>

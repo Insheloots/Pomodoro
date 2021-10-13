@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, ScrollView, StyleSheet, Text, TouchableOpacity} from 'react-native'
+import {View, ScrollView, StyleSheet, Text, TouchableOpacity, Alert, Linking} from 'react-native'
 import 'firebase/firestore'
 import {Icon} from 'react-native-elements';
 import { AppLoading } from "expo";
@@ -29,9 +29,20 @@ export default function rHome({navigation}) {
         extraBoldM: Montserrat_800ExtraBold,
     });
 
+    const BotonPausas = () => {
+        Alert.alert('🏃 Pausas activas', 'A continuación encontrara 3 opciones de pausas activas o pausas saludables, selecciona la parte del cuerpo que deseas trabajar y a través de un video explicativo de YouTube realiza los ejercicios/estiramientos que indican.',[
+            {text: 'Cuello', onPress: () => Linking.openURL('https://youtu.be/oUswSNE7jbg')},
+            {text: 'Manos y codos', onPress: () => Linking.openURL('https://youtu.be/RooKAegD7Lo')},
+            {text: 'Abdomen y espalda', onPress: () => Linking.openURL('https://youtu.be/IOiVPdGGC6E')},
+        ],
+        {cancelable: true}
+        )
+    }
+
     if (!fontsLoaded) {
         return <AppLoading />;
     }
+    
     return (
         <ScrollView style={styles.container}>
             <View style={styles.center}>
@@ -66,9 +77,16 @@ export default function rHome({navigation}) {
                 </TouchableOpacity>
             </View>
             <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
+                <TouchableOpacity onPress={BotonPausas}>
+                <View style={styles.btnView}>
+                    <Text style={styles.buttonText}>Pausas activas</Text>
+                </View>
+                </TouchableOpacity>
+            </View>
+            <View style={{marginBottom:'2%',marginHorizontal: '8%'}}>
                 <TouchableOpacity onPress={() => navigation.navigate('RJuego')}>
                 <View style={styles.btnView}>
-                    <Text style={styles.buttonText}> Juegos</Text>
+                    <Text style={styles.buttonText}>Juegos</Text>
                 </View>
                 </TouchableOpacity>
             </View>
